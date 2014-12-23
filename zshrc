@@ -1,31 +1,31 @@
-# Allow completing of the remainder of a command
-bindkey "^N" insert-last-word
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
 
-# Show contents of directory after cd-ing into it
-chpwd() {
-  ls -lrthG
-}
+ZSH_THEME="robbyrussell"
 
-# Save a ton of history
-HISTSIZE=20000
-HISTFILE=~/.zsh_history
-SAVEHIST=20000
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Enable completion
-autoload -U compinit
-compinit
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Disable flow control commands (keeps C-s from freezing everything)
-stty start undef
-stty stop undef
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git)
 
-# RVM 
-[[ -s "/Users/ben/.rvm/scripts/rvm" ]] && source "/Users/ben/.rvm/scripts/rvm"
+# User configuration
 
-# Sourcing of other files
-source $HOME/.dotfiles/zsh/aliases
-source $HOME/.dotfiles/zsh/functions
-source $HOME/.dotfiles/zsh/prompt
-source $HOME/.dotfiles/zsh/z
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export MANPATH="/usr/local/man:$MANPATH"
 
-export PATH=$PATH:bin:~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.rvm/bin
+source $ZSH/oh-my-zsh.sh
+
+# You may need to manually set your language environment
+export LANG=en_US.UTF-8
+export EDITOR='mvim'
+
+alias gs="git status"
