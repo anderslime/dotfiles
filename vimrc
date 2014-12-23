@@ -10,35 +10,30 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-
-" My bundles
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'ervandew/supertab'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'koron/nyancat-vim'
-Plugin 'skwp/greplace.vim'
 Plugin 'tomtom/tcomment_vim'
-Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-cucumber'
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'wincent/Command-T'
+
+" Ben Orenstein plugins
+" Plugin 'kchmck/vim-coffee-script'
+" Plugin 'skwp/greplace.vim'
+" Plugin 'tpope/vim-bundler'
+" Plugin 'tpope/vim-cucumber'
+" Plugin 'tpope/vim-dispatch'
+" Plugin 'tpope/vim-endwise'
+" Plugin 'tpope/vim-fugitive'
+" Plugin 'tpope/vim-rails'
+" Plugin 'tpope/vim-commentary'
+" Plugin 'tpope/vim-repeat'
+" Plugin 'tpope/vim-surround' - tags
+" Plugin 'tpope/vim-unimpaired'
 
 " nelstrom's plugin depends on kana's
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
-
-" Clojure
-Plugin 'guns/vim-clojure-static'
-Plugin 'tpope/vim-classpath'
-Plugin 'tpope/vim-fireplace'
-Plugin 'tpope/vim-leiningen'
 
 " Colors
 Plugin 'nanotech/jellybeans.vim'
