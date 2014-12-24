@@ -30,7 +30,7 @@ Plugin 'LaTeX-Box-Team/LaTeX-Box'
 " Plugin 'tpope/vim-rails'
 " Plugin 'tpope/vim-commentary'
 " Plugin 'tpope/vim-repeat'
-" Plugin 'tpope/vim-surround' - tags
+Plugin 'tpope/vim-surround'
 " Plugin 'tpope/vim-unimpaired'
 
 " nelstrom's plugin depends on kana's
