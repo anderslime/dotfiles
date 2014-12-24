@@ -19,7 +19,7 @@ compdef _git git-nuke=git-checkout
 
 function git-on-master {
   branch=`git_branch_name`
-  git checkout master && git pull --rebase 
+  git checkout master && git pull --rebase
   git checkout $branch
   git rebase master
   }
@@ -45,3 +45,14 @@ function take {
 function gc {
   git commit -m "$*"
 }
+
+function gem_from_path {
+  gem_name="$1"
+
+  # Replace gem 'gem_name' with gem 'gem_name', path: '../gem_name'
+  perl -p -i -e "s/gem ('|\")${gem_name}('|\")\$/gem '${gem_name}', path: '..\/${gem_name}'/gi" Gemfile
+  rm -rf tmp/cache/assets  # Clear asset cache (for rails apps)
+  bundle  # Bundle
+  powder -r # Restart pow
+}
+alias gfp=gem_from_path

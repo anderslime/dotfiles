@@ -1,16 +1,17 @@
 #!/usr/bin/env bash
+function gfp {
+  gem_name="$1"
+  echo $gem_name
 
-gem_name="$1"
-echo $gem_name
+  # Replace gem 'gem_name' with gem 'gem_name', path: '../gem_name'
+  perl -p -i -e "s/gem ('|\")${gem_name}('|\")\$/gem '${gem_name}', path: '..\/${gem_name}'/gi" Gemfile
 
-# Replace gem 'gem_name' with gem 'gem_name', path: '../gem_name'
-perl -p -i -e "s/gem ('|\")${gem_name}('|\")\$/gem '${gem_name}', path: '..\/${gem_name}'/gi" Gemfile
+  # Clear asset cache (for rails apps)
+  rm -rf tmp/cache/assets
 
-# Clear asset cache (for rails apps)
-rm -rf tmp/cache/assets
+  # Bundle
+  bundle
 
-# Bundle
-bundle
-
-# Restart server
-powder -r
+  # Restart server
+  powder -r
+}
