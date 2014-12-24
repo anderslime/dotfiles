@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+gem_name="$1"
+echo $gem_name
+
+# Replace gem 'gem_name' with gem 'gem_name', path: '../gem_name'
+perl -p -i -e "s/gem ('|\")${gem_name}('|\")\$/gem '${gem_name}', path: '..\/${gem_name}'/gi" Gemfile
+
+# Clear asset cache (for rails apps)
+rm -rf tmp/cache/assets
+
+# Bundle
+bundle
+
+# Restart server
+powder -r

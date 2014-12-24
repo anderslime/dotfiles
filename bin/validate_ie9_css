@@ -1,0 +1,55 @@
+#!/usr/bin/env ruby
+
+begin
+  require 'active_support/core_ext'
+rescue LoadError
+  puts 'Could not find rails. Installing rails...'
+  %x(gem install rails  --no-rdoc --no-ri)
+  require 'active_support/core_ext'
+end
+
+begin
+  require 'css_splitter/splitter'
+rescue LoadError
+  puts "Could not find css_splitter. Installing css_splitter..."
+  %x(gem install css_splitter --no-rdoc --no-ri)
+  require 'css_splitter/splitter'
+end
+
+print_stats = ENV["STATS"]
+
+precompiled_assets = Dir.glob("public/**/*.css")
+
+if precompiled_assets.empty?
+  abort "You have no precompiled assets. Please run 'bundle exec rake assets:precompile'"
+end
+
+css_selector_counts = precompiled_assets.map do |css_file|
+  [File.basename(css_file), CssSplitter::Splitter.count_selectors(css_file)]
+end
+
+invalid_css_sheets = css_selector_counts.select {|selector_count|
+  puts selector_count.first
+  selector_count.last > 4095
+}
+
+# Validate stylesheets
+if invalid_css_sheets.empty?
+  puts "Your stylesheets are alright"
+else
+  invalid_css_sheets.each do |selector_count|
+    puts "WARNING: #{selector_count.first} contains #{selector_count.last} - more selectors than IE9 can handle"
+    puts "Consider splitting the stylesheet into more stylesheets"
+  end
+end
+
+# Print the selector counts
+puts "Your stylesheet selector counts:"
+puts 85.times.map { "-" }.join
+printf "%-70s | %s\n", "Stylesheet", "Selectors"
+puts 85.times.map { "-" }.join
+css_selector_counts.each do |selector_count|
+  printf "%-70s | %d\n", selector_count.first, selector_count.last
+  puts 85.times.map { "-" }.join
+end
+

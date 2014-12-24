@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Usage: update_gem_and_pr gem_to_update
+
+gem_name="$1"
+pull_request="$2"
+
+git add . -A
+git commit -m "TMP"
+git co master
+git reset upstream/master --hard
+git pull upstream master
+git delete-branch "update-$gem_name"
+git co -b "update-$gem_name"
+bundle update --source "$gem_name"
+git add . -A
+git commit -m "Update $gem_name"
+git push origin "update-$gem_name"
