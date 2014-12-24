@@ -23,6 +23,6 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export LANG=en_US.UTF-8
 export EDITOR='vim'
 
-# source /Users/anderslime/.dotfiles/zsh/aliases
+source /Users/anderslime/.dotfiles/zsh/aliases
 
 alias gs="git status"
