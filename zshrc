@@ -2,7 +2,7 @@
 export ZSH=$HOME/.oh-my-zsh
 
 # ZSH Theme
-ZSH_THEME="robbyrussell"
+ZSH_THEME="awesomepanda"
 
 # oh-my-zsh plugins
 plugins=(git)
