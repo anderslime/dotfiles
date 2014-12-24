@@ -126,7 +126,7 @@ map <Leader>ra :%s/
 map <Leader>rd :!bundle exec rspec % --format documentation<CR>
 map <Leader>rf :CommandTFlush<CR>:CommandT<CR>
 map <Leader>rw :%s/\s\+$//<cr>:w<cr>
-
+map <C-n> :NERDTreeToggle<cr>
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path
 map <Leader>e :e <C-R>=escape(expand("%:p:h"),' ') . '/'<CR>
