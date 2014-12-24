@@ -1,0 +1,6 @@
+[user]
+	name = Anders Emil Nielsen
+	email = aemilnielsen@gmail.com
+[alias]
+	ap = add -p
+	cm = commit -m
