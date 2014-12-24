@@ -28,3 +28,4 @@ alias vi='vim'
 alias gp="git add -p"
 alias tmp="git tmp"
 alias wip="git wip"
+alias gp="git push"
