@@ -4,3 +4,21 @@
 [alias]
 	ap = add -p
 	cm = commit -m
+	remove-merged = !sh -c 'git checkout master && git branch --merged | egrep -v \"production|master\" | xargs -L1 git delete-branch'
+	tmp = commit -a -m 'tmp'
+	wip = commit -a -m 'wip'
+	co = checkout
+	cob = checkout -b
+	dc = diff --cached
+	db = delete-branch
+[color]
+	status = auto
+	diff = auto
+	branch = auto
+[core]
+	excludefile = /Users/anderslime/.gitignore
+	editor = vim --noplugin
+[credential]
+	helper = osxkeychain
+[push]
+	default = current
