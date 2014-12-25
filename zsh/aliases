@@ -25,7 +25,7 @@ alias v='vim'
 alias vi='vim'
 
 # Git
-alias gp="git add -p"
-alias tmp="git tmp"
-alias wip="git wip"
-alias gp="git push"
+alias gp="git add . -p"
+alias gn="git add . -N"
+alias tmp="git add . -A && git commit -m 'TMP'"
+alias wip="git add . -A && git commit -m 'WIP'"
