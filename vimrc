@@ -31,11 +31,31 @@ Plugin 'kien/ctrlp.vim'
 " Plugin 'tpope/vim-commentary'
 " Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
 " Plugin 'tpope/vim-unimpaired'
 
 " nelstrom's plugin depends on kana's
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
+
+" UI Plugins
+Plugin 'bling/vim-airline'       " UI statusbar niceties
+  set laststatus=2               " enable airline even if no splits
+  let g:airline_theme='luna'
+  let g:airline_powerline_fonts=1
+  let g:airline_enable_branch=1
+  let g:airline_enable_syntastic=1
+  let g:airline_powerline_fonts = 1
+  let g:airline_left_sep = ''
+  let g:airline_right_sep = ''
+  let g:airline_linecolumn_prefix = '␊ '
+  let g:airline_linecolumn_prefix = '␤ '
+  let g:airline_linecolumn_prefix = '¶ '
+  let g:airline_branch_prefix = '⎇ '
+  let g:airline_paste_symbol = 'ρ'
+  let g:airline_paste_symbol = 'Þ'
+  let g:airline_paste_symbol = '∥'
+  let g:airline#extensions#tabline#enabled = 0
 
 " Colors
 Plugin 'nanotech/jellybeans.vim'
