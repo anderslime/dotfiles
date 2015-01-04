@@ -19,6 +19,7 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'scrooloose/nerdtree'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'kien/ctrlp.vim'
+Plugin 'kongo2002/fsharp-vim'
 " Ben Orenstein plugins
 " Plugin 'kchmck/vim-coffee-script'
 " Plugin 'skwp/greplace.vim'
