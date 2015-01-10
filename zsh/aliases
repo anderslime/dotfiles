@@ -32,3 +32,11 @@ alias tmp="git add . -A && git commit -m 'TMP'"
 alias wip="git add . -A && git commit -m 'WIP'"
 alias gpo="git push origin master"
 alias gpu="git push upstream master"
+
+# Fsharp
+alias cwhile="fslex Lexer.fsl && fsyacc --module Parser Parser.fsy"
+alias whilerun="fsharpi --use:Script.fsx"
+alias fswhile="cwhile && whilerun"
+
+# Rails
+alias devlog="tail -f log/development.log"
