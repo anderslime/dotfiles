@@ -113,8 +113,7 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 " au BufRead,BufNewFile *.fsx set filetype=fs
 
 " Read upon:
-" Better? completion on command line
-set wildmenu
+set cc=80 " Show ruler at 80 character column
 " What to do when I press 'wildchar'. Worth tweaking to see what feels right.
 set wildmode=list:full
 set nowrap
