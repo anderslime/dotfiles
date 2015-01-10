@@ -146,6 +146,8 @@ let mapleader = ","
 vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 map <Leader>bb :!bundle install<cr>
 nmap <Leader>bi :source ~/.vimrc<cr>:PluginInstall<cr>
+map <Leader>st :source %<cr>
+map <Leader>sv :source .vimrc<CR>
 map <Leader>d orequire 'pry'<cr>binding.pry<esc>:w<cr>
 map <Leader>ra :%s/
 map <Leader>rd :!bundle exec rspec % --format documentation<CR>
