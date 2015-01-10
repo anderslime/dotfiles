@@ -11,6 +11,8 @@
 	cob = checkout -b
 	dc = diff --cached
 	db = delete-branch
+	ri = rebase --interactive
+	rim = rebase --interactive master
 [color]
 	status = auto
 	diff = auto
