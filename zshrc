@@ -16,6 +16,13 @@ SAVEHIST=20000
 chpwd() {
   ls -lrthG
 }
+
+# Fsharp stuf
+export MONO_GAC_PREFIX="/usr/local"
+alias fslex="mono ~/code/FSharpPowerPack-4.0.0.0/bin/fslex.exe"
+alias fsyacc="mono ~/code/FSharpPowerPack-4.0.0.0/bin/fsyacc.exe"
+
+# Load oh my zsh
 source $ZSH/oh-my-zsh.sh
 export PATH=$HOME/bin:$HOME/.dotfiles/bin:/usr/local/bin:$PATH
 
