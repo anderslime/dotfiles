@@ -24,7 +24,12 @@ alias fsyacc="mono ~/code/FSharpPowerPack-4.0.0.0/bin/fsyacc.exe"
 
 # Load oh my zsh
 source $ZSH/oh-my-zsh.sh
+
+# PATH
 export PATH=$HOME/bin:$HOME/.dotfiles/bin:/usr/local/bin:$PATH
+
+# Loklaebase stuff
+export PATH=$HOME/code/lb/bin:$PATH
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
