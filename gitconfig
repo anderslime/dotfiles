@@ -18,8 +18,8 @@
 	diff = auto
 	branch = auto
 [core]
-	excludefile = /Users/anderslime/.gitignore
 	editor = vim --noplugin
+	excludesfile = /Users/anderslime/.gitignore
 [credential]
 	helper = osxkeychain
 [push]
