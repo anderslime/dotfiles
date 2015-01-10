@@ -20,6 +20,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'kien/ctrlp.vim'
 Plugin 'kongo2002/fsharp-vim'
+Plugin 'kchmck/vim-coffee-script'
 " Ben Orenstein plugins
 " Plugin 'kchmck/vim-coffee-script'
 " Plugin 'skwp/greplace.vim'
