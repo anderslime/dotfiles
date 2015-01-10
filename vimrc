@@ -108,6 +108,10 @@ hi MatchParen cterm=none ctermbg=black ctermfg=yellow
 " By default, vim thinks .md is Modula-2.
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
+" Set FSharp Filetype
+" au BufRead,BufNewFile *.fs set filetype=fs
+" au BufRead,BufNewFile *.fsx set filetype=fs
+
 " Read upon:
 " Better? completion on command line
 set wildmenu
