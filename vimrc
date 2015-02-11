@@ -94,6 +94,8 @@ set cc=80 " Display line at 80 chars
 
 " Don't add the comment prefix when I hit enter or o/O on a comment line.
 set formatoptions-=or
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+
 
 " Readable highlight text
 :highlight PmenuSel ctermfg=black
