@@ -90,6 +90,7 @@ set nohlsearch                  " Stop highlihgt search after something -...
 set backupdir=~/.tmp
 set directory=~/.tmp
 set timeoutlen=500 " Less leader timeout
+set cc=80 " Display line at 80 chars
 
 " Don't add the comment prefix when I hit enter or o/O on a comment line.
 set formatoptions-=or
