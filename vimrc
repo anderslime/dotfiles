@@ -35,6 +35,7 @@ Plugin 'mustache/vim-mustache-handlebars'
 " Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
+Plugin 'slim-template/vim-slim'
 " Plugin 'tpope/vim-unimpaired'
 
 " nelstrom's plugin depends on kana's
