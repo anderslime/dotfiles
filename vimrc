@@ -105,6 +105,7 @@ highlight SignColumn ctermbg=black
 
 " Use Silver Searcher for 'grepping'
 set grepprg=ag
+let g:ackprg = 'ag --vimgrep'
 
 set list listchars=tab:»·,trail:·
 syntax on			" syntax highlighting
