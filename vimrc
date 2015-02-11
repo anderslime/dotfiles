@@ -61,6 +61,10 @@ Plugin 'bling/vim-airline'       " UI statusbar niceties
   let g:airline_paste_symbol = '∥'
   let g:airline#extensions#tabline#enabled = 0
 
+" Ctrl-p configurations
+let g:ctrlp_custom_ignore = {
+  \ 'dir': '\v(node_modules|bower_components|dist)'
+  \ }
 " Colors
 Plugin 'nanotech/jellybeans.vim'
 
