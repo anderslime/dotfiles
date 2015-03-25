@@ -172,6 +172,7 @@ map <Leader>e :e <C-R>=escape(expand("%:p:h"),' ') . '/'<CR>
 map <Leader>s :split <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
 map <Leader>v :vnew <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
 map <Leader>c i_<Esc>r
+map <Leader>stt :%retab!<Esc>
 
 " Beginning and end of files as in terminal
 imap <c-e> <c-o>$
