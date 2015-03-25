@@ -1,15 +1,9 @@
 # Handle the fact that this file will be used with multiple OSs
 alias amend="git commit --amend"
 alias aliases='vim ~/.dotfiles/zsh/aliases'
-alias bake='bundle exec rake'
-alias be='bundle exec'
-alias bu='bundle update'
 alias code='cd ~/code'
 alias d='cd ~/.dotfiles'
 alias drop='cd ~/Dropbox'
-alias gad='git add --all .'
-alias gcm="git commit -m"
-alias gco='git checkout'
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias gdm='git diff master'
@@ -19,19 +13,40 @@ alias startpostgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgre
 alias startredis='redis-server /usr/local/etc/redis.conf &'
 alias stoppostgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop'
 alias sync='git add -u . && git commit -m "Minor changes. Commit message skipped." && gpo'
-alias tail-logs='heroku logs -t'
 alias undeployed='git fetch --multiple production origin && git log production/master..origin/master'
 alias v='vim'
 alias vi='vim'
+alias gemconsole="irb -rubygems -I lib -r ${PWD##*/}.rb"
+
+# Bundler
+alias bake='bundle exec rake'
+alias be='bundle exec'
+alias bu='bundle update'
+alias bus='bundle update --source='
+
+# Boot2docker
+alias b2d='boot2docker'
+# Heroku
+alias hlogs='heroku logs -t'
 
 # Git
 alias gp="git add . -p"
 alias gn="git add . -N"
-alias gaa="git add . -A"
+alias gf="git commit --fixup"
+alias gad='git add --all .'
 alias tmp="git add . -A && git commit -m 'TMP'"
 alias wip="git add . -A && git commit -m 'WIP'"
+alias gcall="git add . -A && git commit -m"
 alias gpo="git push origin master"
+alias glo="git pull origin master"
 alias gpu="git push upstream master"
+alias glu="git pull upstream master"
+alias gcm="git commit -m"
+alias gco='git checkout'
+alias gcom='git co master'
+alias gca="git commit --amend"
+alias gcon='git checkout -b'
+alias grm="git ri master"
 
 # Fsharp
 alias cwhile="fslex Lexer.fsl && fsyacc --module Parser Parser.fsy"
@@ -40,3 +55,10 @@ alias fswhile="cwhile && whilerun"
 
 # Rails
 alias devlog="tail -f log/development.log"
+alias rc="rails c"
+
+# Pow
+alias pr="powder -r"
+
+# Ember
+alias es="ember serve"
