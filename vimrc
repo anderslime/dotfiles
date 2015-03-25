@@ -162,6 +162,7 @@ map <Leader>sv :source .vimrc<CR>
 map <Leader>d orequire 'pry'<cr>binding.pry<esc>:w<cr>
 map <Leader>ra :%s/
 map <Leader>rd :!bundle exec rspec % --format documentation<CR>
+map <Leader>mt :!mix test %<CR>
 map <Leader>rf :CommandTFlush<CR>:CommandT<CR>
 map <Leader>rw :%s/\s\+$//<cr>:w<cr>
 map <C-n> :NERDTreeToggle<cr>
