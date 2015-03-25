@@ -22,6 +22,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'kongo2002/fsharp-vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'ngmy/vim-rubocop'
 " Ben Orenstein plugins
 " Plugin 'kchmck/vim-coffee-script'
 " Plugin 'skwp/greplace.vim'
@@ -173,6 +174,10 @@ map <Leader>c i_<Esc>r
 " Beginning and end of files as in terminal
 imap <c-e> <c-o>$
 imap <c-a> <c-o>^
+
+" Rubocop
+let g:vimrubocop_keymap = 0
+map <Leader>rc :RuboCop<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
