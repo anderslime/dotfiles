@@ -64,7 +64,7 @@ Plugin 'bling/vim-airline'       " UI statusbar niceties
 
 " Ctrl-p configurations
 let g:ctrlp_custom_ignore = {
-  \ 'dir': '\v(node_modules|bower_components|dist)'
+  \ 'dir': '\v(node_modules|bower_components|dist|deps|_build)'
   \ }
 " Colors
 Plugin 'nanotech/jellybeans.vim'
