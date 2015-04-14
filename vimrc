@@ -23,6 +23,7 @@ Plugin 'kongo2002/fsharp-vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'ngmy/vim-rubocop'
+Plugin 'godlygeek/tabular'
 " Ben Orenstein plugins
 " Plugin 'kchmck/vim-coffee-script'
 " Plugin 'skwp/greplace.vim'
@@ -181,6 +182,12 @@ imap <c-a> <c-o>^
 " Rubocop
 let g:vimrubocop_keymap = 0
 map <Leader>rc :RuboCop<CR>
+
+" Tabularize
+nmap <Leader>a= :Tabularize /=<CR>
+vmap <Leader>a= :Tabularize /=<CR>
+" nmap <Leader>a: :Tabularize /:\zs<CR>
+" vmap <Leader>a: :Tabularize /:\zs<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
