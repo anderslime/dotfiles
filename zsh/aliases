@@ -63,6 +63,11 @@ alias pr="powder -r"
 # Ember
 alias es="ember serve"
 
+# Heroku
+alias hd="git push origin master && git push heroku master"
+alias hdr="hd && heroku run rake db:migrate"
+alias hdr="hd && rake db:migrate"
+
 # Tmux
 alias ts="tmux list-sessions"
 alias ta="tmux attach -t"

@@ -38,6 +38,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'slim-template/vim-slim'
+Plugin 'rizzatti/dash.vim'
 " Plugin 'tpope/vim-unimpaired'
 
 " nelstrom's plugin depends on kana's
