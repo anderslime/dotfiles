@@ -26,10 +26,9 @@ alias bus='bundle update --source='
 
 # Boot2docker
 alias b2d='boot2docker'
-# Heroku
-alias hlogs='heroku logs -t'
 
 # Git
+alias gs="git status"
 alias gp="git add . -p"
 alias gn="git add . -N"
 alias gf="git commit --fixup"
@@ -62,13 +61,25 @@ alias pr="powder -r"
 
 # Ember
 alias es="ember serve"
+alias ges="ember server --proxy http://goodiepack.dev"
 
 # Heroku
-alias hd="git push origin master && git push heroku master"
+alias gphm="git push heroku master"
+alias hd="git push origin master && gphm"
 alias hdr="hd && heroku run rake db:migrate"
 alias hdr="hd && rake db:migrate"
+alias hlogs='heroku logs -t'
 
 # Tmux
 alias ts="tmux list-sessions"
 alias ta="tmux attach -t"
 alias tkill="tmux kill-session -t"
+
+# Misc
+alias uuid="uuidgen | tr '[:upper:]' '[:lower:]'"
+alias cuuid="uuid | pbcopy"
+
+# Latex
+alias lx="pdflatex"
+alias lxr="lx report && open report.pdf"
+alias lxbr="lx report && bibtex report && lx report && lx report && open report.pdf"

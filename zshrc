@@ -26,7 +26,7 @@ alias fsyacc="mono ~/code/FSharpPowerPack-4.0.0.0/bin/fsyacc.exe"
 source $ZSH/oh-my-zsh.sh
 
 # PATH
-export PATH=$HOME/bin:$HOME/.dotfiles/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$HOME/.dotfiles/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 # Loklaebase stuff
 export PATH=$HOME/code/lb/bin:$PATH
@@ -42,4 +42,6 @@ source /Users/anderslime/.dotfiles/zsh/aliases
 source /Users/anderslime/.dotfiles/zsh/credentials
 # source /Users/anderslime/.dotfiles/zsh/prompt
 # source ~/.bin/tmuxinator.zsh
-alias gs="git status"
+
+# added by travis gem
+[ -f /Users/anderslime/.travis/travis.sh ] && source /Users/anderslime/.travis/travis.sh
