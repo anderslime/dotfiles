@@ -56,3 +56,8 @@ function gem_from_path {
   powder -r # Restart pow
 }
 alias gfp=gem_from_path
+
+function note {
+  vim ~/notes/$1.txt
+}
+alias en=note

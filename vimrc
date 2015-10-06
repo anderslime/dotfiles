@@ -122,6 +122,7 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 " Set FSharp Filetype
 " au BufRead,BufNewFile *.fs set filetype=fs
 " au BufRead,BufNewFile *.fsx set filetype=fs
+au BufRead,BufNewFile *.skim setfiletype slim
 
 " Read upon:
 " Better? completion on command line

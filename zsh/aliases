@@ -27,6 +27,11 @@ alias bus='bundle update --source='
 # Boot2docker
 alias b2d='boot2docker'
 
+# Tmux/mux
+alias tmk="tmux kill-session -t"
+alias tma="tmux attach -t"
+alias tms="mux start"
+
 # Git
 alias gs="git status"
 alias gp="git add . -p"
@@ -46,6 +51,7 @@ alias gcom='git co master'
 alias gca="git commit --amend"
 alias gcon='git checkout -b'
 alias grm="git ri master"
+alias gitres="git add . -A && git rebase --continue"
 
 # Fsharp
 alias cwhile="fslex Lexer.fsl && fsyacc --module Parser Parser.fsy"

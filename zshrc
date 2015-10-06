@@ -39,6 +39,7 @@ export LANG=en_US.UTF-8
 export EDITOR='vim'
 
 source /Users/anderslime/.dotfiles/zsh/aliases
+source /Users/anderslime/.dotfiles/zsh/functions
 source /Users/anderslime/.dotfiles/zsh/credentials
 # source /Users/anderslime/.dotfiles/zsh/prompt
 # source ~/.bin/tmuxinator.zsh
