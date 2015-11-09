@@ -61,3 +61,7 @@ function note {
   vim ~/notes/$1.txt
 }
 alias en=note
+
+function h {
+  heroku $2 --remote=$1 ${@:3}
+}

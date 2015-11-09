@@ -24,6 +24,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'ngmy/vim-rubocop'
 Plugin 'godlygeek/tabular'
+Plugin 'ecomba/vim-ruby-refactoring'
 " Ben Orenstein plugins
 " Plugin 'kchmck/vim-coffee-script'
 " Plugin 'skwp/greplace.vim'
@@ -39,6 +40,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'slim-template/vim-slim'
 Plugin 'rizzatti/dash.vim'
+Plugin 'geoffharcourt/vim-matchit'
 " Plugin 'tpope/vim-unimpaired'
 
 " nelstrom's plugin depends on kana's
@@ -53,11 +55,6 @@ let g:airline_powerline_fonts=1
 let g:airline_powerline_fonts = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
-let g:airline_symbols = {
-  \ 'branch': '⎇ ',
-  \ 'linenr': '¶ ',
-  \ 'paste': 'ρ'
-  \ }
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#branch#enabled = 1
@@ -72,6 +69,7 @@ Plugin 'nanotech/jellybeans.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+filetype plugin on
 
 " Use the colorscheme from above
 colorscheme jellybeans
@@ -159,13 +157,15 @@ vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'
 map <Leader>bb :!bundle install<cr>
 nmap <Leader>bi :source ~/.vimrc<cr>:PluginInstall<cr>
 map <Leader>st :source %<cr>
-map <Leader>sv :source .vimrc<CR>
+map <Leader>sv :source ~/.vimrc<CR>
 map <Leader>d orequire 'pry'<cr>binding.pry<esc>:w<cr>
 map <Leader>ra :%s/
 map <Leader>rd :!bundle exec rspec % --format documentation<CR>
 map <Leader>mt :!mix test %<CR>
+map <Leader>np :set nopaste <CR> :retab<CR>
 map <Leader>rf :CommandTFlush<CR>:CommandT<CR>
 map <Leader>rw :%s/\s\+$//<cr>:w<cr>
+map <Leader> :%s/\s\+$//<cr>:w<cr>
 map <C-n> :NERDTreeToggle<cr>
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path
@@ -178,6 +178,17 @@ map <Leader>stt :%retab!<Esc>
 " Beginning and end of files as in terminal
 imap <c-e> <c-o>$
 imap <c-a> <c-o>^
+
+" Ruby refactoring
+nnoremap <leader>rap  :RAddParameter<cr>
+nnoremap <leader>rcpc :RConvertPostConditional<cr>
+nnoremap <leader>rel  :RExtractLet<cr>
+vnoremap <leader>rec  :RExtractConstant<cr>
+vnoremap <leader>relv :RExtractLocalVariable<cr>
+nnoremap <leader>rit  :RInlineTemp<cr>
+vnoremap <leader>rrlv :RRenameLocalVariable<cr>
+vnoremap <leader>rriv :RRenameInstanceVariable<cr>
+vnoremap <leader>rem  :RExtractMethod<cr>
 
 " Rubocop
 let g:vimrubocop_keymap = 0

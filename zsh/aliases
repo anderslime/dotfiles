@@ -24,13 +24,21 @@ alias be='bundle exec'
 alias bu='bundle update'
 alias bus='bundle update --source='
 
-# Boot2docker
-alias b2d='boot2docker'
+# Docker
+alias dc='docker-compose'
 
 # Tmux/mux
 alias tmk="tmux kill-session -t"
 alias tma="tmux attach -t"
 alias tms="mux start"
+
+## Tmux GoodiePack
+alias msg="tms goodiepack"
+alias msgo="tms goodiepack-organization"
+alias msgs="tms goodiepack_showroom"
+alias ksg="tmk goodiepack"
+alias ksgo="tmk goodiepack-organization"
+alias ksgs="tmk goodiepack_showroom"
 
 # Git
 alias gs="git status"
@@ -70,11 +78,13 @@ alias es="ember serve"
 alias ges="ember server --proxy http://goodiepack.dev"
 
 # Heroku
-alias gphm="git push heroku master"
+alias gphm="git push production master && hp rake db:migrate"
 alias hd="git push origin master && gphm"
 alias hdr="hd && heroku run rake db:migrate"
 alias hdr="hd && rake db:migrate"
 alias hlogs='heroku logs -t'
+alias hs="h staging"
+alias hp="h production"
 
 # Tmux
 alias ts="tmux list-sessions"
