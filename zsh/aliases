@@ -78,10 +78,10 @@ alias es="ember serve"
 alias ges="ember server --proxy http://goodiepack.dev"
 
 # Heroku
-alias gphm="git push production master && hp rake db:migrate"
-alias hd="git push origin master && gphm"
-alias hdr="hd && heroku run rake db:migrate"
-alias hdr="hd && rake db:migrate"
+alias gpp="git push production master && hp rake db:migrate"
+alias gps="git push staging master && hs rake db:migrate"
+alias hdp="git push origin master && gpp"
+alias hds="git push origin master && gps"
 alias hlogs='heroku logs -t'
 alias hs="h staging"
 alias hp="h production"
