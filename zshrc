@@ -22,6 +22,10 @@ export MONO_GAC_PREFIX="/usr/local"
 alias fslex="mono ~/code/FSharpPowerPack-4.0.0.0/bin/fslex.exe"
 alias fsyacc="mono ~/code/FSharpPowerPack-4.0.0.0/bin/fsyacc.exe"
 
+# Node Version Manager
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
 # Load oh my zsh
 source $ZSH/oh-my-zsh.sh
 
