@@ -1,0 +1,46 @@
+snippet chap
+\chapter{${1:chapter name}}
+\label{chapter:${2:${1/\\\+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/g}}}
+
+% chapter ${1/\\\+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/g} end
+$0
+endsnippet
+
+snippet sec
+\section{${1:section name}}
+\label{sec:${2:${1/\\\+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/g}}}
+
+% section ${1/\\\+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/g} end
+$0
+endsnippet
+
+snippet sub
+\subsection{${1:section name}}
+\label{subsec:${2:${1/\\\+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/g}}}
+
+% subsection ${1/\\\+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/g} end
+$0
+endsnippet
+
+snippet fig
+\begin{figure*}[ht!]
+  \centering
+  \includegraphics[width=1.0\linewidth]{${1:filename}}
+  \caption{${2:caption}}
+  \label{fig:${3:label}}
+\end{figure*}
+
+$0
+endsnippet
+
+snippet code
+\begin{lstlisting}
+$1
+\end{lstlisting}
+endsnippet
+
+snippet item
+\begin{itemize}
+	\item $1
+\end{itemize}
+endsnippet
