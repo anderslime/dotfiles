@@ -36,9 +36,15 @@ alias tms="mux start"
 alias msg="tms goodiepack"
 alias msgo="tms goodiepack-organization"
 alias msgs="tms goodiepack_showroom"
+alias mst="tms thesis"
+alias mspg="tms peergrade"
+
 alias ksg="tmk goodiepack"
 alias ksgo="tmk goodiepack-organization"
 alias ksgs="tmk goodiepack_showroom"
+
+# Python
+alias kpg="pkill -f run_debug.py"
 
 # Git
 alias gs="git status"
