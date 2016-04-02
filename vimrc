@@ -32,6 +32,10 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'slim-template/vim-slim'
 Plugin 'rizzatti/dash.vim'
 Plugin 'geoffharcourt/vim-matchit'
+Plugin 'Townk/vim-autoclose'
+
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 " nelstrom's plugin depends on kana's
 Plugin 'kana/vim-textobj-user'
@@ -51,8 +55,15 @@ let g:airline#branch#enabled = 1
 
 " Ctrl-p configurations
 let g:ctrlp_custom_ignore = {
-  \ 'dir': '\v(node_modules|bower_components|dist|deps|_build)'
+  \ 'dir': '\v(node_modules|bower_components|dist|deps|_build)',
+  \ 'file': '\v\.(pyc)$',
   \ }
+
+" NERDTree configuration
+let NERDTreeIgnore = ['\.pyc$', '*.egg-info', '__pycache__/*']
+let NERDTreeRespectWildIgnore=1
+
+
 " Colors
 Plugin 'nanotech/jellybeans.vim'
 
@@ -83,7 +94,27 @@ set cc=80 " Display line at 80 chars
 
 " Don't add the comment prefix when I hit enter or o/O on a comment line.
 set formatoptions-=or
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.egg-info,
+
+" LaTeX ignores
+set wildignore+=*.aux,*.blg,*.out,*.toc,*.bbl
+
+" Snippes
+" let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+" let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+" let g:SuperTabDefaultCompletionType = '<c-n>'
+
+" let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsJumpForwardTrigger="<tab>"
+" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+" let g:UltiSnipsEditSplit="vertical"
+" Trigger configuration. Do not use <tab> if you use
+" let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsJumpForwardTrigger="<c-b>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" " If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 
 
 " Readable highlight text
@@ -106,6 +137,7 @@ hi MatchParen cterm=none ctermbg=black ctermfg=yellow
 
 " By default, vim thinks .md is Modula-2.
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+autocmd BufNewFile,BufReadPost *.es6 set filetype=javascript
 
 " Set FSharp Filetype
 " au BufRead,BufNewFile *.fs set filetype=fs
