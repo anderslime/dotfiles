@@ -45,7 +45,6 @@ Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'bling/vim-airline'       " UI statusbar niceties
 set laststatus=2               " enable airline even if no splits
 let g:airline_theme='luna'
-let g:airline_powerline_fonts=1
 let g:airline_powerline_fonts = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
@@ -94,7 +93,7 @@ set cc=80 " Display line at 80 chars
 
 " Don't add the comment prefix when I hit enter or o/O on a comment line.
 set formatoptions-=or
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.egg-info,
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.egg-info,*.git
 
 " LaTeX ignores
 set wildignore+=*.aux,*.blg,*.out,*.toc,*.bbl
