@@ -29,6 +29,9 @@ source $(brew --prefix nvm)/nvm.sh
 # Load oh my zsh
 source $ZSH/oh-my-zsh.sh
 
+# Python
+export PYTHONIOENCODING=utf-8
+
 # PATH
 export PATH=$HOME/bin:$HOME/.dotfiles/bin:/usr/local/bin:/usr/local/sbin:$PATH
 

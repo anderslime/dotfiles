@@ -28,6 +28,7 @@ alias bus='bundle update --source='
 alias dc='docker-compose'
 
 # Tmux/mux
+alias mux="tmuxinator"
 alias tmk="tmux kill-session -t"
 alias tma="tmux attach -t"
 alias tms="mux start"
@@ -105,3 +106,6 @@ alias cuuid="uuid | pbcopy"
 alias lx="pdflatex"
 alias lxr="lx report && open report.pdf"
 alias lxbr="lx report && bibtex report && lx report && lx report && open report.pdf"
+
+# Thesis
+alias is="pip uninstall smache | yes | pip install ../smache"

@@ -58,6 +58,12 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(pyc)$',
   \ }
 
+" Cache in Ctrl-p
+" let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+" if executable('ag')
+"   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+" endif
+
 " NERDTree configuration
 let NERDTreeIgnore = ['\.pyc$', '*.egg-info', '__pycache__/*']
 let NERDTreeRespectWildIgnore=1
@@ -183,6 +189,7 @@ map <Leader>d orequire 'pry'<cr>binding.pry<esc>:w<cr>
 map <Leader>ra :%s/
 map <Leader>rd :!bundle exec rspec % --format documentation<CR>
 map <Leader>pt :!py.test<CR>
+map <Leader>ptf :!py.test -c pytest-fast.ini<CR>
 map <Leader>mt :!mix test %<CR>
 map <Leader>np :set nopaste <CR> :retab<CR>
 map <Leader>rf :CommandTFlush<CR>:CommandT<CR>
