@@ -87,3 +87,8 @@ alias hds="git push origin master && gps"
 alias hlogs='heroku logs -t'
 alias hs="h staging"
 alias hp="h production"
+
+# Projects
+alias cargo="mux start cargoflux"
+alias oddset="mux start oddset"
+alias mitid="mux start mitid"
