@@ -1,51 +1,52 @@
-# Handle the fact that this file will be used with multiple OSs
-alias amend="git commit --amend"
+# UNIX
 alias aliases='vim ~/.dotfiles/zsh/aliases'
 alias code='cd ~/code'
-alias d='cd ~/.dotfiles'
+alias dot='cd ~/.dotfiles'
 alias drop='cd ~/Dropbox'
-alias gd='git diff'
-alias gdc='git diff --cached'
-alias gdm='git diff master'
-alias gg='git lg'
-alias so='source ~/.dotfiles/zsh/aliases'
-alias startpostgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
-alias startredis='redis-server /usr/local/etc/redis.conf &'
-alias stoppostgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop'
-alias sync='git add -u . && git commit -m "Minor changes. Commit message skipped." && gpo'
-alias undeployed='git fetch --multiple production origin && git log production/master..origin/master'
+alias so='source ~/.zshrc'
+alias uuid="uuidgen | tr '[:upper:]' '[:lower:]'"
+alias cuuid="uuid | pbcopy"
+alias prettyjson='python -m json.tool'
+alias jsonvim='prettyjson | vim -c "set syntax=json" -'
+alias jsonless='prettyjson | less'
+
+# Vim
 alias v='vim'
 alias vi='vim'
-alias gemconsole="irb -rubygems -I lib -r ${PWD##*/}.rb"
 
-# Bundler
+# Tmux
+alias ts="tmux list-sessions"
+alias ta="tmux attach -t"
+alias tkill="tmux kill-session -t"
+alias mux="tmuxinator"
+alias tmk="tmux kill-session -t"
+alias tma="tmux attach -t"
+alias ms="mux start"
+
+# Ruby
+alias gemconsole="irb -rubygems -I lib -r ${PWD##*/}.rb"
 alias bake='bundle exec rake'
 alias be='bundle exec'
 alias bu='bundle update'
 alias bus='bundle update --source='
 
+# Rails
+alias devlog="tail -f log/development.log"
+alias rc="rails c"
+
+# Ember
+alias es="ember serve"
+
+# PostgreSQL
+alias stoppostgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop'
+alias startpostgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+
+# Redis
+alias startredis='redis-server /usr/local/etc/redis.conf &'
+
 # Docker
 alias dc='docker-compose'
-
-# Tmux/mux
-alias mux="tmuxinator"
-alias tmk="tmux kill-session -t"
-alias tma="tmux attach -t"
-alias tms="mux start"
-
-## Tmux GoodiePack
-alias msg="tms goodiepack"
-alias msgo="tms goodiepack-organization"
-alias msgs="tms goodiepack_showroom"
-alias mst="tms thesis"
-alias mspg="tms peergrade"
-
-alias ksg="tmk goodiepack"
-alias ksgo="tmk goodiepack-organization"
-alias ksgs="tmk goodiepack_showroom"
-
-# Python
-alias kpg="pkill -f run_debug.py"
+alias dinit='eval $(docker-machine env)'
 
 # Git
 alias gs="git status"
@@ -67,22 +68,16 @@ alias gca="git commit --amend"
 alias gcon='git checkout -b'
 alias grm="git ri master"
 alias gitres="git add . -A && git rebase --continue"
-
-# Fsharp
-alias cwhile="fslex Lexer.fsl && fsyacc --module Parser Parser.fsy"
-alias whilerun="fsharpi --use:Script.fsx"
-alias fswhile="cwhile && whilerun"
-
-# Rails
-alias devlog="tail -f log/development.log"
-alias rc="rails c"
+alias gclean="remove_untracked_files"
+alias amend="git commit --amend"
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gdm='git diff master'
+alias gg='git lg'
+alias undeployed='git fetch --multiple production origin && git log production/master..origin/master'
 
 # Pow
 alias pr="powder -r"
-
-# Ember
-alias es="ember serve"
-alias ges="ember server --proxy http://goodiepack.dev"
 
 # Heroku
 alias gpp="git push production master && hp rake db:migrate"
@@ -92,20 +87,3 @@ alias hds="git push origin master && gps"
 alias hlogs='heroku logs -t'
 alias hs="h staging"
 alias hp="h production"
-
-# Tmux
-alias ts="tmux list-sessions"
-alias ta="tmux attach -t"
-alias tkill="tmux kill-session -t"
-
-# Misc
-alias uuid="uuidgen | tr '[:upper:]' '[:lower:]'"
-alias cuuid="uuid | pbcopy"
-
-# Latex
-alias lx="pdflatex"
-alias lxr="lx report && open report.pdf"
-alias lxbr="lx report && bibtex report && lx report && lx report && open report.pdf"
-
-# Thesis
-alias is="pip uninstall smache | yes | pip install ../smache"
