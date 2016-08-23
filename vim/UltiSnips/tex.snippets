@@ -1,24 +1,32 @@
 snippet chap
 \chapter{${1:chapter name}}
-\label{chapter:${2:${1/\\\+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/g}}}
+\label{chapter:${2:${1/\\\+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:-:\L$1$2$3\E)/g}}}
 
-% chapter ${1/\\\+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/g} end
+% chapter ${1/\\\+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:-:\L$1$2$3\E)/g} end
 $0
 endsnippet
 
 snippet sec
 \section{${1:section name}}
-\label{sec:${2:${1/\\\+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/g}}}
+\label{sec:${2:${1/\\\+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:-:\L$1$2$3\E)/g}}}
 
-% section ${1/\\\+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/g} end
+% section ${1/\\\+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:-:\L$1$2$3\E)/g} end
 $0
 endsnippet
 
 snippet sub
 \subsection{${1:section name}}
-\label{subsec:${2:${1/\\\+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/g}}}
+\label{subsec:${2:${1/\\\+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:-:\L$1$2$3\E)/g}}}
 
-% subsection ${1/\\\+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/g} end
+% subsection ${1/\\\+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:-:\L$1$2$3\E)/g} end
+$0
+endsnippet
+
+snippet subs
+\subsubsection{${1:section name}}
+\label{subsubsec:${2:${1/\\\+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:-:\L$1$2$3\E)/g}}}
+
+% subsubsection ${1/\\\+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:-:\L$1$2$3\E)/g} end
 $0
 endsnippet
 
@@ -43,4 +51,10 @@ snippet item
 \begin{itemize}
 	\item $1
 \end{itemize}
+endsnippet
+
+snippet enum
+\begin{enumerate}
+	\item $1
+\end{enumerate}
 endsnippet
