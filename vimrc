@@ -30,9 +30,9 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'slim-template/vim-slim'
-Plugin 'rizzatti/dash.vim'
 Plugin 'geoffharcourt/vim-matchit'
 Plugin 'Townk/vim-autoclose'
+Plugin 'rizzatti/dash.vim'
 
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -132,7 +132,7 @@ highlight SignColumn ctermbg=black
 set grepprg=ag
 let g:ackprg = 'ag --vimgrep'
 
-set list listchars=tab:»·,trail:·
+" set list listchars=tab:»·,trail:·
 syntax on			" syntax highlighting
 
 colorscheme jellybeans
@@ -143,6 +143,11 @@ hi MatchParen cterm=none ctermbg=black ctermfg=yellow
 " By default, vim thinks .md is Modula-2.
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.es6 set filetype=javascript
+
+" Spell checker on these files
+autocmd BufRead,BufNewFile *.md setlocal spell
+autocmd BufRead,BufNewFile *.tex setlocal spell
+set complete+=kspell
 
 " Set FSharp Filetype
 " au BufRead,BufNewFile *.fs set filetype=fs
@@ -183,15 +188,17 @@ let mapleader = ","
 vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 map <Leader>bb :!bundle install<cr>
 nmap <Leader>bi :source ~/.vimrc<cr>:PluginInstall<cr>
+nmap <silent> <leader>d <Plug>DashSearch
 map <Leader>st :source %<cr>
 map <Leader>sv :source ~/.vimrc<CR>
-map <Leader>d orequire 'pry'<cr>binding.pry<esc>:w<cr>
+" map <Leader>d orequire 'pry'<cr>binding.pry<esc>:w<cr>
 map <Leader>ra :%s/
 map <Leader>rd :!bundle exec rspec % --format documentation<CR>
 map <Leader>pt :!py.test<CR>
 map <Leader>ptf :!py.test -c pytest-fast.ini<CR>
 map <Leader>mt :!mix test %<CR>
 map <Leader>np :set nopaste <CR> :retab<CR>
+map <Leader>p :set paste<CR>
 map <Leader>rf :CommandTFlush<CR>:CommandT<CR>
 map <Leader>rw :%s/\s\+$//<cr>:w<cr>
 map <Leader> :%s/\s\+$//<cr>:w<cr>
@@ -201,7 +208,6 @@ map <C-n> :NERDTreeToggle<cr>
 map <Leader>e :e <C-R>=escape(expand("%:p:h"),' ') . '/'<CR>
 map <Leader>s :split <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
 map <Leader>v :vnew <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
-map <Leader>c i_<Esc>r
 map <Leader>stt :%retab!<Esc>
 
 " Beginning and end of files as in terminal
@@ -218,6 +224,7 @@ nnoremap <leader>rit  :RInlineTemp<cr>
 vnoremap <leader>rrlv :RRenameLocalVariable<cr>
 vnoremap <leader>rriv :RRenameInstanceVariable<cr>
 vnoremap <leader>rem  :RExtractMethod<cr>
+vnoremap // y/<C-R>"<CR>"
 
 " Rubocop
 let g:vimrubocop_keymap = 0
