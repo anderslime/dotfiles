@@ -31,6 +31,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH=$HOME/bin:$HOME/.dotfiles/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 # You may need to manually set your language environment
+export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export EDITOR='vim'
 
