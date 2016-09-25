@@ -33,6 +33,7 @@ alias bus='bundle update --source='
 # Rails
 alias devlog="tail -f log/development.log"
 alias rc="rails c"
+alias rdbm="rake db:migrate"
 
 # Ember
 alias es="ember serve"
@@ -41,12 +42,10 @@ alias es="ember serve"
 alias stoppostgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop'
 alias startpostgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 
-# Redis
-alias startredis='redis-server /usr/local/etc/redis.conf &'
-
 # Docker
 alias dc='docker-compose'
-alias dinit='eval $(docker-machine env)'
+alias dockload='eval $(docker-machine env default)'
+alias docklog="docker logs --follow"
 
 # Git
 alias gs="git status"
@@ -59,7 +58,7 @@ alias wip="git add . -A && git commit -m 'WIP'"
 alias gcall="git add . -A && git commit -m"
 alias gpo="git push origin master"
 alias glo="git pull origin master"
-alias gpu="git push upstream master"
+alias gpu="git push upstream"
 alias glu="git pull upstream master"
 alias gcm="git commit -m"
 alias gco='git checkout'
@@ -87,6 +86,8 @@ alias hds="git push origin master && gps"
 alias hlogs='heroku logs -t'
 alias hs="h staging"
 alias hp="h production"
+alias hpc="hp run rails c"
+alias hsc="hs run rails c"
 
 # Projects
 alias cargo="mux start cargoflux"

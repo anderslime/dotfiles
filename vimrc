@@ -33,6 +33,7 @@ Plugin 'slim-template/vim-slim'
 Plugin 'geoffharcourt/vim-matchit'
 Plugin 'Townk/vim-autoclose'
 Plugin 'rizzatti/dash.vim'
+Plugin 'keith/swift.vim'
 
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -99,7 +100,7 @@ set cc=80 " Display line at 80 chars
 
 " Don't add the comment prefix when I hit enter or o/O on a comment line.
 set formatoptions-=or
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.egg-info,*.git
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.egg-info,*.git,/node_modules/*,/bower_components/*
 
 " LaTeX ignores
 set wildignore+=*.aux,*.blg,*.out,*.toc,*.bbl
