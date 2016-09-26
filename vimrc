@@ -44,6 +44,7 @@ Plugin 'nelstrom/vim-textobj-rubyblock'
 
 " UI Plugins
 Plugin 'bling/vim-airline'       " UI statusbar niceties
+Plugin 'vim-airline/vim-airline-themes'
 set laststatus=2               " enable airline even if no splits
 let g:airline_theme='luna'
 let g:airline_powerline_fonts = 1
