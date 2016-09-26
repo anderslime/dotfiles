@@ -112,7 +112,7 @@ let g:UltiSnipsEditSplit="vertical"
 
 
 " Readable highlight text
-:highlight PmenuSel ctermfg=black
+highlight PmenuSel ctermfg=black
 
 " Set gutter background to black
 highlight SignColumn ctermbg=black
