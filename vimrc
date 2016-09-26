@@ -124,8 +124,6 @@ let g:ackprg = 'ag --vimgrep'
 " set list listchars=tab:»·,trail:·
 syntax on			" syntax highlighting
 
-colorscheme jellybeans
-
 " Make it more obvious which paren I'm on
 hi MatchParen cterm=none ctermbg=black ctermfg=yellow
 
@@ -163,7 +161,6 @@ set laststatus=2  " Always show status line.
 set number
 set gdefault " assume the /g flag on :s substitutions to replace all matches in a line
 set autoindent " always set autoindenting on
-set bg=light
 set tags=./tags;
 highlight StatusLine ctermfg=blue ctermbg=yellow
 au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
