@@ -75,3 +75,8 @@ function remove_untracked_files {
     git clean -f
   fi
 }
+
+function brew_install {
+  brew install $1
+  echo "brew install $1" >> ~/.dotfiles/brewinstall
+}

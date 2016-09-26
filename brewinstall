@@ -26,3 +26,7 @@ brew install sfnt2woff
 brew install sfnt2woff-zopfli
 brew install woff2
 brew install trash
+brew install hub
+brew install postgresql
+brew install imagemagick
+brew install reattach-to-user-namespace --with-wrap-pbcopy-and-pbpaste

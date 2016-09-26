@@ -41,3 +41,5 @@ source /Users/anderslime/.dotfiles/zsh/credentials
 
 # added by travis gem
 [ -f /Users/anderslime/.travis/travis.sh ] && source /Users/anderslime/.travis/travis.sh
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
