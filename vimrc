@@ -106,19 +106,6 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.egg-info,*.git,/node_modules/*,/bower
 " LaTeX ignores
 set wildignore+=*.aux,*.blg,*.out,*.toc,*.bbl
 
-" Snippes
-" let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-" let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-" let g:SuperTabDefaultCompletionType = '<c-n>'
-
-" let g:UltiSnipsExpandTrigger="<tab>"
-" let g:UltiSnipsJumpForwardTrigger="<tab>"
-" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-" let g:UltiSnipsEditSplit="vertical"
-" Trigger configuration. Do not use <tab> if you use
-" let g:UltiSnipsExpandTrigger="<tab>"
-" let g:UltiSnipsJumpForwardTrigger="<c-b>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
