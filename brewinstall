@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+brew update
+
+brew upgrade --all
+
+# From github: mathiasbynens/dotfiles
+brew install bash
+brew tap homebrew/versions
+brew install bash-completion2
+
+if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
+  echo '/usr/local/bin/bash' | sudo tee -a /etc/shells;
+  chsh -s /usr/local/bin/bash;
+fi;
+
+brew install wget --with-iri
+brew install vim --override-system-vi
+brew install homebrew/dupes/grep
+brew install homebrew/dupes/openssh
+brew install homebrew/dupes/screen
+
+# Install font tools.
+brew tap bramstein/webfonttools
+brew install sfnt2woff
+brew install sfnt2woff-zopfli
+brew install woff2
