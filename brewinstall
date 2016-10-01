@@ -30,3 +30,12 @@ brew install hub
 brew install postgresql
 brew install imagemagick
 brew install reattach-to-user-namespace --with-wrap-pbcopy-and-pbpaste
+brew install httpie
+brew install jq
+brew install redis
+brew install trash
+brew install amazon-ecs-cli
+brew install git-extras
+brew install the_silver_searcher
+brew install aws
+brew install awscli

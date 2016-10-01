@@ -35,9 +35,12 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export EDITOR='vim'
 
-source /Users/anderslime/.dotfiles/zsh/aliases
-source /Users/anderslime/.dotfiles/zsh/functions
-source /Users/anderslime/.dotfiles/zsh/credentials
+source $HOME/.dotfiles/zsh/aliases
+source $HOME/.dotfiles/zsh/functions
+source $HOME/.dotfiles/zsh/credentials
+
+# Oddset CLI
+eval "$($HOME/code/oddset-cli/bin/oddset init -)"
 
 # added by travis gem
 [ -f /Users/anderslime/.travis/travis.sh ] && source /Users/anderslime/.travis/travis.sh

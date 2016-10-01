@@ -90,6 +90,8 @@ alias hpc="hp run rails c"
 alias hsc="hs run rails c"
 
 # Projects
-alias cargo="mux start cargoflux"
-alias oddset="mux start oddset"
-alias mitid="mux start mitid"
+alias start_cargo="mux start cargoflux"
+alias start_oddset="mux start oddset"
+alias start_mitid="mux start mitid"
+
+alias rm="trash"
