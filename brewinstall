@@ -25,17 +25,32 @@ brew tap bramstein/webfonttools
 brew install sfnt2woff
 brew install sfnt2woff-zopfli
 brew install woff2
+
+# Misc tools
 brew install trash
-brew install hub
-brew install postgresql
-brew install imagemagick
-brew install reattach-to-user-namespace --with-wrap-pbcopy-and-pbpaste
 brew install httpie
 brew install jq
-brew install redis
-brew install trash
-brew install amazon-ecs-cli
-brew install git-extras
 brew install the_silver_searcher
+brew install trash
+
+# Dev tools
+brew install hub
+brew install git-extras
+brew install reattach-to-user-namespace --with-wrap-pbcopy-and-pbpaste
 brew install aws
 brew install awscli
+brew install amazon-ecs-cli
+brew install foreman
+brew install node
+
+# Databases
+brew install postgresql
+brew install redis
+brew install mongodb
+
+# Server tools
+brew install imagemagick
+brew install libsass
+brew install libxmlsec1
+
+# Ad hoc (not categorized stuff)
