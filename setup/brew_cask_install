@@ -1,0 +1,38 @@
+#!/usr/env/bin bash
+brew update
+
+# Productivity
+brew cask install 1password
+brew cask install alfred
+brew cask install appcleaner
+brew cask install caffeine
+brew cask install keybase
+brew cask install spectacle
+
+# Entertainment
+brew cask install transmission
+brew cask install vlc
+
+# Communication
+brew cask install skype
+brew cask install slack
+
+# Development
+brew cask install docker-toolbox
+brew cask install java
+brew cask install rowanj-gitx
+brew cask install sublime-text
+
+# Files
+brew cask install dropbox
+brew cask install google-drive
+brew cask install fantastical
+
+# Browsers
+brew cask install google-chrome
+brew cask install firefox
+
+# Shape
+brew cask install harvest
+
+# Ad hoc / non-categorized stuff

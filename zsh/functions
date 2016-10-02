@@ -78,5 +78,10 @@ function remove_untracked_files {
 
 function brew_install {
   brew install $1
-  echo "brew install $1" >> ~/.dotfiles/brewinstall
+  echo "brew install $1" >> ~/.dotfiles/setup/brew_install
+}
+
+function get_app {
+  brew cask install $1
+  echo "brew cask install $1" >> ~/.dotfiles/setup/brew_cask_install
 }
