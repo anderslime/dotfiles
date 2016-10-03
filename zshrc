@@ -17,10 +17,6 @@ chpwd() {
   ls -lrthG
 }
 
-# Node Version Manager
-# export NVM_DIR=~/.nvm
-# source $(brew --prefix nvm)/nvm.sh
-
 # Load oh my zsh
 source $ZSH/oh-my-zsh.sh
 
