@@ -33,7 +33,9 @@ export EDITOR='vim'
 
 source $HOME/.dotfiles/zsh/aliases
 source $HOME/.dotfiles/zsh/functions
-source $HOME/.dotfiles/zsh/credentials
+
+# Secret stuff
+[ -f $HOME/.private-dotfiles/shell-init ] && source $HOME/.private-dotfiles/shell-init
 
 # Oddset CLI
 eval "$($HOME/code/oddset-cli/bin/oddset init -)"
