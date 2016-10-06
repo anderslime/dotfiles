@@ -36,3 +36,4 @@ brew cask install firefox
 brew cask install harvest
 
 # Ad hoc / non-categorized stuff
+brew cask install flux

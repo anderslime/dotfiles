@@ -19,7 +19,8 @@
 	branch = auto
 [core]
 	editor = vim --noplugin
-	excludesfile = /Users/anderslime/.gitignore
+  excludesfile = /Users/anderslime/.gitignore
+	ignorecase = false
 [credential]
 	helper = osxkeychain
 [push]

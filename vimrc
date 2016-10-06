@@ -173,6 +173,7 @@ let mapleader = ","
 
 vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 map <Leader>bb :!bundle install<cr>
+map <Leader>eb :!mix deps.get<cr>
 nmap <Leader>bi :source ~/.vimrc<cr>:PluginInstall<cr>
 nmap <silent> <leader>d <Plug>DashSearch
 map <Leader>st :source %<cr>

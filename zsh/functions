@@ -81,7 +81,7 @@ function brew_install {
   echo "brew install $1" >> ~/.dotfiles/setup/brew_install
 }
 
-function get_app {
+function getapp {
   brew cask install $1
   echo "brew cask install $1" >> ~/.dotfiles/setup/brew_cask_install
 }
