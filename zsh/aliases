@@ -95,3 +95,7 @@ alias start_oddset="mux start oddset"
 alias start_mitid="mux start mitid"
 
 alias rm="trash"
+
+# Gradle
+alias jtest="./gradlew test -PmaxParallelForks=10"
+alias jclean="./gradlew clean"
