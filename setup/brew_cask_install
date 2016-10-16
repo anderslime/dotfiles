@@ -37,3 +37,7 @@ brew cask install harvest
 
 # Ad hoc / non-categorized stuff
 brew cask install flux
+brew cask install sketch
+brew cask install garmin-express
+brew cask install charles
+brew cask install sektch
