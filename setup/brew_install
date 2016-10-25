@@ -35,6 +35,8 @@ brew install awscli
 brew install amazon-ecs-cli
 brew install foreman
 brew install node
+brew install heroku
+heroku plugins:install heroku-accounts # Support multiple accounts
 
 # Databases
 brew install postgresql

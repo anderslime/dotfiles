@@ -46,6 +46,7 @@ alias startpostgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgre
 alias dc='docker-compose'
 alias dockload='eval $(docker-machine env default)'
 alias docklog="docker logs --follow"
+alias dockstart='docker-machine start default'
 
 # Git
 alias gs="git status"
@@ -88,12 +89,13 @@ alias hs="h staging"
 alias hp="h production"
 alias hpc="hp run rails c"
 alias hsc="hs run rails c"
+alias hap="heroku accounts:set personal"
+alias has="heroku accounts:set shape"
 
 # Projects
 alias start_cargo="mux start cargoflux"
 alias start_oddset="mux start oddset"
 alias start_mitid="mux start mitid"
-
 alias rm="trash"
 
 # Gradle
