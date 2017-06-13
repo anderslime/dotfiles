@@ -22,6 +22,7 @@ brew cask install docker-toolbox
 brew cask install java
 brew cask install rowanj-gitx
 brew cask install sublime-text
+brew cask install wkhtmltopdf
 
 # Files
 brew cask install dropbox

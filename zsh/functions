@@ -85,3 +85,7 @@ function getapp {
   brew cask install $1
   echo "brew cask install $1" >> ~/.dotfiles/setup/brew_cask_install
 }
+
+function docker_console {
+  docker exec -it $1 /bin/bash
+}

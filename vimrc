@@ -41,6 +41,7 @@ Plugin 'honza/vim-snippets'
 " nelstrom's plugin depends on kana's
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'andreshazard/vim-freemarker'
 
 " UI Plugins
 Plugin 'bling/vim-airline'       " UI statusbar niceties
@@ -105,11 +106,6 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.egg-info,*.git,/node_modules/*,/bower
 
 " LaTeX ignores
 set wildignore+=*.aux,*.blg,*.out,*.toc,*.bbl
-
-
-" " If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
-
 
 " Readable highlight text
 highlight PmenuSel ctermfg=black
@@ -181,6 +177,7 @@ map <Leader>sv :source ~/.vimrc<CR>
 " map <Leader>d orequire 'pry'<cr>binding.pry<esc>:w<cr>
 map <Leader>ra :%s/
 map <Leader>rd :!bundle exec rspec % --format documentation<CR>
+map <Leader>rt :!ruby -Ilib:test %<CR>
 map <Leader>pt :!py.test<CR>
 map <Leader>ptf :!py.test -c pytest-fast.ini<CR>
 map <Leader>mt :!mix test %<CR>

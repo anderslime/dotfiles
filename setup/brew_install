@@ -36,6 +36,8 @@ brew install amazon-ecs-cli
 brew install foreman
 brew install node
 brew install heroku
+brew tap eddieantonio/eddieantonio
+brew install imgcat
 heroku plugins:install heroku-accounts # Support multiple accounts
 
 # Databases

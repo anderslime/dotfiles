@@ -4,11 +4,12 @@
 [alias]
 	ap = add -p
 	cm = commit -m
-	remove-merged = !sh -c 'git checkout master && git branch --merged | egrep -v \"production|master\" | xargs -L1 git delete-branch'
+  remove-merged = !sh -c 'git checkout master && git branch --merged | egrep -v \"production|master\" | xargs -L1 git delete-branch'
+  remove-merged-v2 = !sh -c 'git checkout feature/backend-v2 && git branch --merged | egrep -v \"production|backend-v2|master|modules\" | xargs -L1 git delete-branch'
 	tmp = commit -a -m 'tmp'
 	wip = commit -a -m 'wip'
 	co = checkout
-	cob = checkout -b
+  cob = checkout -b
 	dc = diff --cached
 	db = delete-branch
 	ri = rebase --interactive --autosquash
@@ -40,3 +41,6 @@
 	helper = osxkeychain
 [push]
 	default = current
+[diff]
+	indentHeuristic = on
+	compactionHeuristic = on

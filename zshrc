@@ -22,17 +22,22 @@ source $ZSH/oh-my-zsh.sh
 
 # Python
 # export PYTHONIOENCODING=utf-8
+export PATH=~/Library/Python/2.7/bin:$PATH
 
 # PATH
 export PATH=$HOME/bin:$HOME/.dotfiles/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 # You may need to manually set your language environment
 export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
+export LANG=da_DK.UTF-8
 export EDITOR='vim'
 
 source $HOME/.dotfiles/zsh/aliases
 source $HOME/.dotfiles/zsh/functions
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
 
 # Secret stuff
 [ -f $HOME/.private-dotfiles/shell-init ] && source $HOME/.private-dotfiles/shell-init

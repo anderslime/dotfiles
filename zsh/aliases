@@ -9,6 +9,8 @@ alias cuuid="uuid | pbcopy"
 alias prettyjson='python -m json.tool'
 alias jsonvim='prettyjson | vim -c "set syntax=json" -'
 alias jsonless='prettyjson | less'
+alias cleardns="sudo killall -HUP mDNSResponder"
+alias jobdone="terminal-notifier -message \"Job's done\""
 
 # Vim
 alias v='vim'
@@ -47,6 +49,7 @@ alias dc='docker-compose'
 alias dockload='eval $(docker-machine env default)'
 alias docklog="docker logs --follow"
 alias dockstart='docker-machine start default'
+alias dconsole='docker_console'
 
 # Git
 alias gs="git status"
@@ -75,6 +78,7 @@ alias gdc='git diff --cached'
 alias gdm='git diff master'
 alias gg='git lg'
 alias undeployed='git fetch --multiple production origin && git log production/master..origin/master'
+alias gpcb='git push origin HEAD'
 
 # Pow
 alias pr="powder -r"
@@ -96,7 +100,7 @@ alias has="heroku accounts:set shape"
 alias start_cargo="mux start cargoflux"
 alias start_oddset="mux start oddset"
 alias start_mitid="mux start mitid"
-alias rm="trash"
+# alias rm="trash"
 
 # Gradle
 alias jtest="./gradlew test -PmaxParallelForks=10"
