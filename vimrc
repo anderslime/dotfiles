@@ -16,6 +16,7 @@ Plugin 'koron/nyancat-vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'pangloss/vim-javascript'
+Plugin 'udalov/kotlin-vim'
 " Plugin 'wincent/Command-T'
 Plugin 'scrooloose/nerdtree'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
@@ -34,8 +35,8 @@ Plugin 'geoffharcourt/vim-matchit'
 Plugin 'Townk/vim-autoclose'
 Plugin 'rizzatti/dash.vim'
 Plugin 'keith/swift.vim'
+Plugin 'vim-scripts/groovy.vim'
 
-Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
 " nelstrom's plugin depends on kana's
@@ -132,10 +133,8 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 autocmd BufRead,BufNewFile *.tex setlocal spell
 set complete+=kspell
 
-" Set FSharp Filetype
-" au BufRead,BufNewFile *.fs set filetype=fs
-" au BufRead,BufNewFile *.fsx set filetype=fs
-au BufRead,BufNewFile *.skim setfiletype slim
+" Set Gradle syntax
+au BufNewFile,BufRead *.gradle setf groovy
 
 " Read upon:
 " Better? completion on command line
