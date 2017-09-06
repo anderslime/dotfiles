@@ -36,8 +36,8 @@ source $HOME/.dotfiles/zsh/aliases
 source $HOME/.dotfiles/zsh/functions
 
 # NVM
-export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
+# export NVM_DIR="$HOME/.nvm"
+# . "/usr/local/opt/nvm/nvm.sh"
 
 # Secret stuff
 [ -f $HOME/.private-dotfiles/shell-init ] && source $HOME/.private-dotfiles/shell-init
@@ -46,6 +46,6 @@ export NVM_DIR="$HOME/.nvm"
 eval "$($HOME/code/oddset-cli/bin/oddset init -)"
 
 # added by travis gem
-[ -f /Users/anderslime/.travis/travis.sh ] && source /Users/anderslime/.travis/travis.sh
+# [ -f /Users/anderslime/.travis/travis.sh ] && source /Users/anderslime/.travis/travis.sh
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
