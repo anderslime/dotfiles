@@ -36,6 +36,7 @@ Plugin 'Townk/vim-autoclose'
 Plugin 'rizzatti/dash.vim'
 Plugin 'keith/swift.vim'
 Plugin 'vim-scripts/groovy.vim'
+Plugin 'tpope/tpope-vim-abolish'
 
 Plugin 'honza/vim-snippets'
 
