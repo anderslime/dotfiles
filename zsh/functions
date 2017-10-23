@@ -89,3 +89,8 @@ function getapp {
 function docker_console {
   docker exec -it $1 /bin/bash
 }
+
+function prettyjsonfile {
+  cat "$1" | prettyjson > "$1-pretty"
+  mv "$1-pretty" "$1"
+}
