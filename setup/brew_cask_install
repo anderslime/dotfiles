@@ -8,10 +8,14 @@ brew cask install appcleaner
 brew cask install caffeine
 brew cask install keybase
 brew cask install spectacle
+brew cask install things
 
 # Entertainment
 brew cask install transmission
 brew cask install vlc
+brew cask install spotify
+brew cask install spark
+brew cask install intellij-idea-ce
 
 # Communication
 brew cask install skype
@@ -22,7 +26,6 @@ brew cask install docker-toolbox
 brew cask install java
 brew cask install rowanj-gitx
 brew cask install sublime-text
-brew cask install wkhtmltopdf
 
 # Files
 brew cask install dropbox
@@ -39,6 +42,5 @@ brew cask install harvest
 # Ad hoc / non-categorized stuff
 brew cask install flux
 brew cask install sketch
-brew cask install garmin-express
 brew cask install charles
-brew cask install sektch
+brew cask install paw
