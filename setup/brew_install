@@ -5,19 +5,15 @@ brew update
 brew upgrade --all
 
 brew tap homebrew/versions
+brew install bash
 brew install bash-completion2
 
 brew install wget --with-iri
 brew install vim --override-system-vi
-brew install homebrew/dupes/grep
-brew install homebrew/dupes/openssh
-brew install homebrew/dupes/screen
-
-# Install font tools.
-brew tap bramstein/webfonttools
-brew install sfnt2woff
-brew install sfnt2woff-zopfli
-brew install woff2
+brew install tmux
+berw install zsh
+brew install grep
+brew install openssh
 
 # Misc tools
 brew install trash
@@ -27,28 +23,25 @@ brew install the_silver_searcher
 brew install trash
 
 # Dev tools
+brew install git
+brew install git-lfs
+brew install gradle
+brew install python
+brew install python-3
 brew install hub
 brew install git-extras
-brew install reattach-to-user-namespace --with-wrap-pbcopy-and-pbpaste
 brew install aws
 brew install awscli
 brew install amazon-ecs-cli
 brew install foreman
 brew install node
 brew install heroku
-brew tap eddieantonio/eddieantonio
-brew install imgcat
-heroku plugins:install heroku-accounts # Support multiple accounts
 
 # Databases
 brew install postgresql
 brew install redis
-brew install mongodb
 
 # Server tools
 brew install imagemagick
 brew install libsass
 brew install libxmlsec1
-
-# Ad hoc (not categorized stuff)
-brew install elixir
