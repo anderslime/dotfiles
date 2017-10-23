@@ -103,5 +103,5 @@ alias start_mitid="mux start mitid"
 # alias rm="trash"
 
 # Gradle
-alias jtest="./gradlew test -PmaxParallelForks=10"
-alias jclean="./gradlew clean"
+alias jt="./gradlew test --parallel"
+alias jc="./gradlew clean"
