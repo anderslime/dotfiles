@@ -46,7 +46,7 @@ alias startpostgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgre
 
 # Docker
 alias dc='docker-compose'
-alias dockload='eval $(docker-machine env default)'
+alias dockload='eval $(docker-machine env default) && DOCKER_IP=$(docker-machine ip default)'
 alias docklog="docker logs --follow"
 alias dockstart='docker-machine start default'
 alias dconsole='docker_console'
