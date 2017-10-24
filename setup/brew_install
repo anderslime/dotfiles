@@ -36,6 +36,8 @@ brew install amazon-ecs-cli
 brew install foreman
 brew install node
 brew install heroku
+brew install docker
+brew install docker-machine
 
 # Databases
 brew install postgresql

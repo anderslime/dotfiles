@@ -22,7 +22,7 @@ brew cask install skype
 brew cask install slack
 
 # Development
-brew cask install docker-toolbox
+brew cask install virtualbox
 brew cask install java
 brew cask install rowanj-gitx
 brew cask install sublime-text
