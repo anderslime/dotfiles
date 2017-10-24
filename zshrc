@@ -5,7 +5,11 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="anderslime"
 
 # oh-my-zsh plugins
-plugins=(git)
+plugins=(
+  git
+  docker
+  hub
+)
 
 # User configuration
 HISTSIZE=20000
