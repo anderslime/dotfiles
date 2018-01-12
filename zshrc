@@ -25,8 +25,8 @@ chpwd() {
 source $ZSH/oh-my-zsh.sh
 
 # Python
-# export PYTHONIOENCODING=utf-8
-export PATH=~/Library/Python/2.7/bin:$PATH
+export PYTHONIOENCODING=utf-8
+export PATH=~/Library/Python/3.6/bin:$PATH
 
 # PATH
 export PATH=$HOME/bin:$HOME/.dotfiles/bin:/usr/local/bin:/usr/local/sbin:$PATH
@@ -48,6 +48,9 @@ source $HOME/.dotfiles/zsh/functions
 
 # Oddset CLI
 eval "$($HOME/code/oddset-cli/bin/oddset init -)"
+
+# Shp Docker CLI
+eval "$(/Users/andersemil/code/shpdocker/bin/shpdocker init -)"
 
 # added by travis gem
 # [ -f /Users/anderslime/.travis/travis.sh ] && source /Users/anderslime/.travis/travis.sh

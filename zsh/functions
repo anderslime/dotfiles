@@ -94,3 +94,10 @@ function prettyjsonfile {
   cat "$1" | prettyjson > "$1-pretty"
   mv "$1-pretty" "$1"
 }
+
+function rebase_all {
+  for branch in $(git branch --no-merged | xargs); do
+    git co $branch
+    git rebase master || git rebase --abort
+  done
+}

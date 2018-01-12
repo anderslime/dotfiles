@@ -38,6 +38,8 @@ brew install node
 brew install heroku
 brew install docker
 brew install docker-machine
+brew install docker-compose
+brew install watchman # for running ember server
 
 # Databases
 brew install postgresql

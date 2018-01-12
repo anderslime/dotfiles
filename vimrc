@@ -59,7 +59,7 @@ let g:airline#branch#enabled = 1
 
 " Ctrl-p configurations
 let g:ctrlp_custom_ignore = {
-  \ 'dir': '\v(node_modules|bower_components|dist|deps|_build)',
+  \ 'dir': '\v(node_modules|bower_components|dist|deps|_build|build)',
   \ 'file': '\v\.(pyc)$',
   \ }
 
@@ -127,7 +127,9 @@ hi MatchParen cterm=none ctermbg=black ctermfg=yellow
 
 " By default, vim thinks .md is Modula-2.
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+autocmd BufNewFile,BufReadPost Jenkinsfile set filetype=groovy
 autocmd BufNewFile,BufReadPost *.es6 set filetype=javascript
+autocmd BufNewFile,BufReadPost *.j2 set filetype=yaml
 
 " Spell checker on these files
 autocmd BufRead,BufNewFile *.md setlocal spell
