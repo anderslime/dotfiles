@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+
+
+POSITIONAL=()
+while [[ $# -gt 0 ]]; do
+	key="$1"
+
+	case $key in
+			-s|--skip-create)
+			SKIP_CREATE="YES"
+			shift
+			shift
+			;;
+			*)
+			POSITIONAL+=("$1")
+			shift
+			;;
+	esac
+done
+set -- "${POSITIONAL[@]}"
+
+machine_name=$1
+last_ip_digit=$2
+
+if [ "$#" -ne 2 ]; then
+  echo "You must pass a <machine name> and <last ip digit> in the command:"
+  echo "Example:"
+  echo "  create_docker_machine_swarm my-swarm-cluster 60"
+  exit 1
+fi
+
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+function tell {
+  echo -e "${GREEN}${1}${NC}"
+}
+
+docker_host_ip="192.168.99.$last_ip_digit"
+
+tell "Creating machine with the name '$machine_name' and the ip '$docker_host_ip'"
+
+if [ "$SKIP_CREATE" != "YES" ]; then
+  tell "=== Creating docker machine"
+  docker-machine create $machine_name --driver virtualbox --engine-insecure-registry $docker_host_ip:5000
+fi
+
+tell "=== Configuring docker machine with IP"
+echo "ifconfig eth1 $docker_host_ip netmask 255.255.255.0 broadcast 192.168.99.255 up" | \
+  docker-machine ssh $machine_name sudo tee /var/lib/boot2docker/bootsync.sh > /dev/null
+
+tell "=== Restarting machine"
+docker-machine restart $machine_name
+
+tell "=== Regenerating certificates"
+docker-machine regenerate-certs $machine_name -f
+
+tell "=== Configuring docker machine as cluster"
+eval $(docker-machine env $machine_name)
+docker swarm init --advertise-addr $docker_host_ip
+
+tell "=== Creating docker registry"
+docker service create --name registry --publish 5000:5000 registry
