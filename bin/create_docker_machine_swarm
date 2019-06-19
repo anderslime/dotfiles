@@ -42,18 +42,21 @@ tell "Creating machine with the name '$machine_name' and the ip '$docker_host_ip
 
 if [ "$SKIP_CREATE" != "YES" ]; then
   tell "=== Creating docker machine"
-  docker-machine create $machine_name --driver virtualbox --engine-insecure-registry $docker_host_ip:5000
+  docker-machine create nf-cluster \
+    --driver virtualbox \
+    --engine-insecure-registry 192.168.99:5000 \
+    --tls-san "$machine_name.dev, IP:$docker_host_ip, IP Address:$docker_host_ip"
 fi
 
-tell "=== Configuring docker machine with IP"
-echo "ifconfig eth1 $docker_host_ip netmask 255.255.255.0 broadcast 192.168.99.255 up" | \
-  docker-machine ssh $machine_name sudo tee /var/lib/boot2docker/bootsync.sh > /dev/null
+# tell "=== Configuring docker machine with IP"
+# echo "ifconfig eth1 $docker_host_ip netmask 255.255.255.0 broadcast 192.168.99.255 up" | \
+#   docker-machine ssh $machine_name sudo tee /var/lib/boot2docker/bootsync.sh > /dev/null
 
-tell "=== Restarting machine"
-docker-machine restart $machine_name
-
-tell "=== Regenerating certificates"
-docker-machine regenerate-certs $machine_name -f
+# tell "=== Restarting machine"
+# docker-machine restart $machine_name
+#
+# tell "=== Regenerating certificates"
+# docker-machine regenerate-certs $machine_name -f
 
 tell "=== Configuring docker machine as cluster"
 eval $(docker-machine env $machine_name)

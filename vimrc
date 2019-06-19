@@ -9,6 +9,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle, required
+Plugin 'Quramy/tsuquyomi'
+Plugin 'leafgarland/typescript-vim'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'ervandew/supertab'
@@ -54,7 +56,7 @@ let g:airline_powerline_fonts = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#syntastic#enabled = 1
+" let g:airline#extensions#syntastic#enabled = 1
 let g:airline#branch#enabled = 1
 
 " Ctrl-p configurations
@@ -161,7 +163,6 @@ set gdefault " assume the /g flag on :s substitutions to replace all matches in 
 set autoindent " always set autoindenting on
 set tags=./tags;
 highlight StatusLine ctermfg=blue ctermbg=yellow
-au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
 set nofoldenable " Say no to code folding...
 
 " ========================================================================
@@ -195,6 +196,7 @@ map <Leader>e :e <C-R>=escape(expand("%:p:h"),' ') . '/'<CR>
 map <Leader>s :split <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
 map <Leader>v :vnew <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
 map <Leader>stt :%retab!<Esc>
+map <Leader>j :%!python -m json.tool<Esc>
 
 " Beginning and end of files as in terminal
 imap <c-e> <c-o>$

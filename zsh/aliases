@@ -1,6 +1,5 @@
 # UNIX
 alias aliases='vim ~/.dotfiles/zsh/aliases'
-alias code='cd ~/code'
 alias dot='cd ~/.dotfiles'
 alias drop='cd ~/Dropbox'
 alias so='source ~/.zshrc'
@@ -46,9 +45,9 @@ alias startpostgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgre
 
 # Docker
 alias dc='docker-compose'
-alias dockload='eval $(docker-machine env dev) && DOCKER_IP=$(docker-machine ip dev)'
 alias docklog="docker logs --follow"
 alias dconsole='docker_console'
+alias dockload='eval $(docker-machine env nf-cluster)'
 
 # Git
 alias gs="git status"
@@ -105,3 +104,4 @@ alias start_mitid="mux start mitid"
 # Gradle
 alias jt="./gradlew test --parallel"
 alias jc="./gradlew clean"
+alias tpush='./gradlew test --parallel && gpcb'

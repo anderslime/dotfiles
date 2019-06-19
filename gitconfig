@@ -1,46 +1,46 @@
 [user]
-	name = Anders Emil Nielsen
-	email = aemilnielsen@gmail.com
+  name = Anders Emil Pouplier
+  email = aemilnielsen@gmail.com
 [alias]
-	ap = add -p
-	cm = commit -m
+  ap = add -p
+  cm = commit -m
   remove-merged = !sh -c 'git checkout master && git branch --merged | egrep -v \"production|master\" | xargs -L1 git delete-branch'
   remove-merged-v2 = !sh -c 'git checkout feature/backend-v2 && git branch --merged | egrep -v \"production|backend-v2|master|modules\" | xargs -L1 git delete-branch'
-	tmp = commit -a -m 'tmp'
-	wip = commit -a -m 'wip'
-	co = checkout
+  tmp = commit -a -m 'tmp'
+  wip = commit -a -m 'wip'
+  co = checkout
   cob = checkout -b
-	dc = diff --cached
-	db = delete-branch
-	ri = rebase --interactive --autosquash
-	rim = rebase --interactive --autosquash master
+  dc = diff --cached
+  db = delete-branch
+  ri = rebase --interactive --autosquash
+  rim = rebase --interactive --autosquash master
 
-	# Fancy logging.
-	#   h = head
-	#   hp = head with patch
-	#   r = recent commits, only current branch
-	#   ra = recent commits, all reachable refs
-	#   l = all commits, only current branch
-	#   la = all commits, all reachable refs
-	head = !git r -1
-	h = !git head
-	hp = "!. ~/.githelpers && show_git_head"
-	r = !GIT_NO_PAGER=1 git l -30
-	ra = !git r --all
-	l = "!. ~/.githelpers && pretty_git_log"
-	la = !git l --all
+  # Fancy logging.
+  #   h = head
+  #   hp = head with patch
+  #   r = recent commits, only current branch
+  #   ra = recent commits, all reachable refs
+  #   l = all commits, only current branch
+  #   la = all commits, all reachable refs
+  head = !git r -1
+  h = !git head
+  hp = "!. ~/.githelpers && show_git_head"
+  r = !GIT_NO_PAGER=1 git l -30
+  ra = !git r --all
+  l = "!. ~/.githelpers && pretty_git_log"
+  la = !git l --all
 [color]
-	status = auto
-	diff = auto
-	branch = auto
+  status = auto
+  diff = auto
+  branch = auto
 [core]
-	editor = vim --noplugin
-  excludesfile = /Users/anderslime/.gitignore
-	ignorecase = false
+  editor = vim --noplugin
+  excludesfile = /Users/andersemil/.gitignore
+  ignorecase = false
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 [push]
-	default = current
+  default = current
 [diff]
-	indentHeuristic = on
-	compactionHeuristic = on
+  indentHeuristic = on
+  compactionHeuristic = on

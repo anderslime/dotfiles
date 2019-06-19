@@ -13,3 +13,4 @@ Guardfile
 .idea
 .iml
 out
+load-env
