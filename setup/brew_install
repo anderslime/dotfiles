@@ -30,22 +30,11 @@ brew install python
 brew install python-3
 brew install hub
 brew install git-extras
-brew install aws
 brew install awscli
-brew install amazon-ecs-cli
-brew install foreman
-brew install node
-brew install heroku
 brew install docker
 brew install docker-machine
 brew install docker-compose
-brew install watchman # for running ember server
 
 # Databases
 brew install postgresql
 brew install redis
-
-# Server tools
-brew install imagemagick
-brew install libsass
-brew install libxmlsec1
