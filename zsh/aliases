@@ -105,3 +105,4 @@ alias start_mitid="mux start mitid"
 alias jt="./gradlew test --parallel"
 alias jc="./gradlew clean"
 alias tpush='./gradlew test --parallel && gpcb'
+alias kotlinlib="gradle init --type kotlin-library && rm -rf .gradle gradle && rm gradlew* && rm settings.gradle.kts .gitignore"

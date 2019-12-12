@@ -14,3 +14,4 @@ Guardfile
 .iml
 out
 load-env
+.vscode
