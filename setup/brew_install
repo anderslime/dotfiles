@@ -14,15 +14,11 @@ brew install tmux
 berw install zsh
 brew install grep
 brew install openssh
-
-# Misc tools
 brew install trash
 brew install httpie
 brew install jq
 brew install the_silver_searcher
 brew install trash
-
-# Dev tools
 brew install git
 brew install git-lfs
 brew install gradle

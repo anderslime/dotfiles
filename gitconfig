@@ -44,3 +44,5 @@
 [diff]
   indentHeuristic = on
   compactionHeuristic = on
+[pull]
+	ff = only

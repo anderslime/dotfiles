@@ -8,7 +8,7 @@ ZSH_THEME="anderslime"
 plugins=(
   git
   docker
-  hub
+  aws
 )
 
 # User configuration
@@ -26,8 +26,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Python
 export PYTHONIOENCODING=utf-8
-export PATH=~/Library/Python/3.6/bin:$PATH
-export PATH=~/code/bat:$PATH
+# export PATH=~/Library/Python/3.6/bin:$PATH
+# export PATH=~/code/bat:$PATH
 
 # PATH
 # export PATH=$HOME/bin:$HOME/.dotfiles/bin:/usr/local/bin:/usr/local/sbin:$PATH
@@ -36,6 +36,7 @@ export PATH=~/code/bat:$PATH
 export LC_ALL=en_US.UTF-8
 export LANG=da_DK.UTF-8
 export EDITOR='vim'
+export LC_CTYPE="en_US.UTF-8"
 
 source $HOME/.dotfiles/zsh/aliases
 source $HOME/.dotfiles/zsh/functions
@@ -68,7 +69,21 @@ eval "$(/Users/andersemil/code/nf-deploy/nf-cli/bin/nf init -)"
 # Danske Spil CLI
 eval "$(/Users/andersemil/code/ds-cli/bin/ds init -)"
 
-# added by travis gem
-[ -f /Users/anderslime/.travis/travis.sh ] && source /Users/anderslime/.travis/travis.sh
+# Brew
+export PATH="/usr/local/sbin:$PATH"
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+# shp-games-infrastructure tools
+export PATH=$PATH:~/code/shp-games-infrastructure/bin/tools:~/code/shp-games-infrastructure/bin
+
+export PATH="/Users/andersemil/.local/bin:$PATH"
+
+# Shape Games CLI
+eval "$(/Users/andersemil/code/shp-games-backend-cli/bin/sg init -)"
+
+# AWS
+export AWS_SHAPE_GAMES_USER=anders
+export AWS_DEFAULT_SSO_REGION=eu-west-1
+export AWS_DEFAULT_SSO_START_URL=https://shapegames.awsapps.com/start
+
+eval "$(nodenv init -)"
+

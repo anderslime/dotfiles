@@ -24,6 +24,13 @@ function git-on-master {
   git rebase master
   }
 
+function legacy_aws_session_from_sso {
+  credential=$(aws-sso-util credential-process --profile "$AWS_PROFILE")
+  echo AWS_ACCESS_KEY_ID=$(jq -r '.AccessKeyId' <<< "$credential")
+  echo AWS_SECRET_ACCESS_KEY=$(jq -r '.SecretAccessKey' <<< "$credential")
+  echo AWS_SESSION_TOKEN=$(jq -r '.SessionToken' <<< "$credential")
+}
+
 function g {
   if [[ $# > 0 ]]; then
     git $@

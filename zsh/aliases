@@ -100,6 +100,9 @@ alias start_cargo="mux start cargoflux"
 alias start_oddset="mux start oddset"
 alias start_mitid="mux start mitid"
 # alias rm="trash"
+#
+# AWS
+alias asso='aws-sso-util'
 
 # Gradle
 alias jt="./gradlew test --parallel"
