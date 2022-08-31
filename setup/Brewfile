@@ -11,7 +11,9 @@ cask "intellij-idea-ce"
 cask "spectacle"
 cask "docker"
 cask "microsoft-teams"
+cask "iterm2"
 
+brew "mas"
 brew "wget"
 brew "vim"
 brew "tmux"
@@ -27,7 +29,6 @@ brew "git"
 brew "git-lfs"
 brew "gradle"
 brew "python"
-brew "python-3"
 brew "hub"
 brew "git-extras"
 brew "awscli"
@@ -36,7 +37,8 @@ brew "postgresql"
 brew "redis"
 brew "java11"
 
-mas "1Password", id: 443987910
+mas "Spark", id: 1176895641
+mas "1Password", id: 1333542190
 mas "WhatsApp Desktop", id: 1147396723
 mas "Things 3", id: 904280696
 mas "Bear - Markdown Notes", id: 1091189122
