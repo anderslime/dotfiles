@@ -3,6 +3,9 @@
     "tap": {
       "homebrew/cask": {
         "revision": "830111e1e4e6985bb1e75ecd626793e8c49ed22b"
+      },
+      "adoptopenjdk/openjdk": {
+        "revision": "27915e4ab3856595a8b46d1fd3b6c379c1f02210"
       }
     },
     "cask": {
@@ -100,6 +103,15 @@
         "version": "3.4.16",
         "options": {
           "full_name": "iterm2",
+          "args": {
+            "appdir": "/Applications"
+          }
+        }
+      },
+      "adoptopenjdk8": {
+        "version": "8,292:b10",
+        "options": {
+          "full_name": "adoptopenjdk8",
           "args": {
             "appdir": "/Applications"
           }
