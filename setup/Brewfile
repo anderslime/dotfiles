@@ -7,10 +7,10 @@ cask "charles"
 cask "spotify"
 cask "visual-studio-code"
 cask "fantastical"
-cask "harvest"
 cask "intellij-idea-ce"
 cask "spectacle"
 cask "docker"
+cask "microsoft-teams"
 
 brew "wget"
 brew "vim"
@@ -37,3 +37,8 @@ brew "redis"
 brew "java11"
 
 mas "1Password", id: 443987910
+mas "WhatsApp Desktop", id: 1147396723
+mas "Things 3", id: 904280696
+mas "Bear - Markdown Notes", id: 1091189122
+mas "Harvest", id: 506189836
+mas "Slack", id: 803453959
