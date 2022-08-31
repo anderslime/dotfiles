@@ -57,18 +57,6 @@ java8
 # Secret stuff
 [ -f $HOME/.private-dotfiles/shell-init ] && source $HOME/.private-dotfiles/shell-init
 
-# Oddset CLI
-eval "$($HOME/code/oddset-cli/bin/oddset init -)"
-
-# Shp Docker CLI
-eval "$(/Users/andersemil/code/shpdocker/bin/shpdocker init -)"
-
-# Nordisk Film CLI
-eval "$(/Users/andersemil/code/nf-deploy/nf-cli/bin/nf init -)"
-
-# Danske Spil CLI
-eval "$(/Users/andersemil/code/ds-cli/bin/ds init -)"
-
 # Brew
 export PATH="/usr/local/sbin:$PATH"
 
