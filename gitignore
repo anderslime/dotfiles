@@ -15,3 +15,7 @@ Guardfile
 out
 load-env
 .vscode
+__pycache__
+# cached-foggles
+# import-cli/data
+.github/instructions/*

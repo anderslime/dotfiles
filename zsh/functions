@@ -108,3 +108,5 @@ function rebase_all {
     git rebase master || git rebase --abort
   done
 }
+
+function killport { lsof -ti:$1 | xargs kill; }

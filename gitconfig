@@ -1,11 +1,17 @@
 [user]
   name = Anders Emil Pouplier
   email = aemilnielsen@gmail.com
+  signingkey = /Users/andersemil/.ssh/id_rsa
+#
+# [includeIf "gitdir:~/code/kambi"]
+#   name = Anders Emil Pouplier
+#   email = anders@shapegames.com
+#   signingkey = /Users/andersemil/.ssh/id_kambi_github
+
 [alias]
   ap = add -p
   cm = commit -m
   remove-merged = !sh -c 'git checkout master && git branch --merged | egrep -v \"production|master\" | xargs -L1 git delete-branch'
-  remove-merged-v2 = !sh -c 'git checkout feature/backend-v2 && git branch --merged | egrep -v \"production|backend-v2|master|modules\" | xargs -L1 git delete-branch'
   tmp = commit -a -m 'tmp'
   wip = commit -a -m 'wip'
   co = checkout
@@ -46,3 +52,7 @@
   compactionHeuristic = on
 [pull]
 	ff = only
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true

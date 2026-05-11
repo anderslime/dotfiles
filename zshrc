@@ -2,7 +2,7 @@
 export ZSH=$HOME/.oh-my-zsh
 
 # ZSH Theme
-ZSH_THEME="anderslime"
+ZSH_THEME="awesomepanda"
 
 # oh-my-zsh plugins
 plugins=(
@@ -42,13 +42,14 @@ source $HOME/.dotfiles/zsh/aliases
 source $HOME/.dotfiles/zsh/functions
 
 # Java
-export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
-export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
-alias java8='export JAVA_HOME=$JAVA_8_HOME'
-alias java11='export JAVA_HOME=$JAVA_11_HOME'
+# export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
+export JAVA_21_HOME=$(/usr/libexec/java_home -v21)
+# alias java8='export JAVA_HOME=$JAVA_8_HOME'
+# alias java11='export JAVA_HOME=$JAVA_11_HOME'
+alias java21='export JAVA_HOME=$JAVA_21_HOME'
 
 # Default to java8
-java8
+# java8
 
 # NVM
 # export NVM_DIR="$HOME/.nvm"
@@ -66,12 +67,23 @@ export PATH=$PATH:~/code/shp-games-infrastructure/bin/tools:~/code/shp-games-inf
 export PATH="/Users/andersemil/.local/bin:$PATH"
 
 # Shape Games CLI
-eval "$(/Users/andersemil/code/shp-games-backend-cli/bin/sg init -)"
+# eval "$(/Users/andersemil/code/shp-games-backend-cli/bin/sg init -)"
 
 # AWS
 export AWS_SHAPE_GAMES_USER=anders
 export AWS_DEFAULT_SSO_REGION=eu-west-1
 export AWS_DEFAULT_SSO_START_URL=https://shapegames.awsapps.com/start
 
+bindkey "^[[1;3D" backward-word
+bindkey "^[[1;3C" forward-word
+
 eval "$(nodenv init -)"
 
+export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
+
+# bun completions
+[ -s "/Users/andersemil/.bun/_bun" ] && source "/Users/andersemil/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
