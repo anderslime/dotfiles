@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "defaultMode": "auto"
+  },
+  "model": "opus",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "osascript -e 'display notification \"Claude needs your attention\" with title \"Claude Code\" sound name \"Ping\"'"
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "game-sounds@citedy": true,
+    "aws-cdk@aws-skills": true,
+    "aws-cost-ops@aws-skills": true,
+    "posthog@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "citedy": {
+      "source": {
+        "source": "github",
+        "repo": "citedy/claude-plugins"
+      }
+    },
+    "aws-skills": {
+      "source": {
+        "source": "github",
+        "repo": "zxkane/aws-skills"
+      }
+    }
+  },
+  "agentPushNotifEnabled": true,
+  "skipAutoPermissionPrompt": true
+}

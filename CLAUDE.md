@@ -24,6 +24,7 @@ Consequence for edits: changing a file here changes the live config immediately.
 - `gitconfig` — signs commits via SSH key (`gpg.format = ssh`, `commit.gpgsign = true`); `pull.ff = only`; rich `git l`/`git r`/`git hp` aliases backed by `githelpers`.
 - `Brewfile` — `brew bundle --file=Brewfile` to install.
 - `bin/` — small one-off scripts, exposed on `$PATH` via the `~/.bin` symlink.
+- `claude/` — Claude Code config. Handled specially by the Rakefile: NOT symlinked as `~/.claude` (that would clobber the live cache). Instead, individual entries listed in `CLAUDE_LINKS` in the Rakefile are symlinked into `~/.claude/` (e.g. `claude/settings.json` → `~/.claude/settings.json`, `claude/commands/build-cli.md` → `~/.claude/commands/build-cli.md`). Run `rake claude` to (re)apply just these links, or `rake install` to do everything. Add new tracked entries by appending to `CLAUDE_LINKS`.
 
 ## Common commands
 
