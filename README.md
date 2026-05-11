@@ -1,18 +1,39 @@
-# Ben Orenstein's dot files
+# Dotfiles
 
-These are config files to set up a system the way I like it.
+Personal macOS dotfiles (Apple Silicon). Shell, vim, git, tmux, and a `Brewfile`.
 
-Vim-users will likely find useful stuff in my [vimrc](vimrc), and also my [Ruby snippets](vim/snippets/ruby.snippets).
+## Install on a fresh Mac
 
-I'm also a pretty aggressive aliaser. You might find a few you like in [zsh/aliases](zsh/aliases).
+1. Install Xcode Command Line Tools (`xcode-select --install`) and restore SSH keys to `~/.ssh`.
+2. Clone the repo and create the `~/.dotfiles` symlink the rest of the config expects:
+   ```sh
+   mkdir -p ~/code
+   git clone git@github.com:<you>/dotfiles.git ~/code/dotfiles
+   ln -s ~/code/dotfiles ~/.dotfiles
+   ```
+3. Symlink every dotfile into `$HOME`:
+   ```sh
+   cd ~/.dotfiles && rake install
+   ```
+4. Install Homebrew, then the bundle:
+   ```sh
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   brew bundle --file=~/.dotfiles/Brewfile
+   ```
+   Sign in to the App Store first if `mas` entries fail, then re-run `brew bundle`.
+5. (Optional) Restore the private repo for secrets and work-specific env:
+   ```sh
+   git clone git@github.com:<you>/private-dotfiles.git ~/code/private-dotfiles
+   ln -s ~/code/private-dotfiles ~/.private-dotfiles
+   ```
+   `zshrc` sources `~/.private-dotfiles/shell-init` automatically when present.
+6. Vim plugins (Vundle):
+   ```sh
+   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+   vim +PluginInstall +qall
+   ```
 
-## Installation
+## Notes
 
-  git clone git://github.com/r00k/dotfiles ~/.dotfiles
-  cd ~/.dotfiles
-  rake install
-
-  Vim plugins are managed through vundle. You'll need to install vundle to get them.
-
-  git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-  Run :BundleInstall in vim.
+- Single branch (`master`), commits are SSH-signed (see `gitconfig`).
+- Editing files in this repo updates the live config immediately — they're symlinked into `$HOME`. Run `so` (alias for `source ~/.zshrc`) after editing zsh files.

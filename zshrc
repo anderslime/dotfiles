@@ -1,3 +1,6 @@
+# Homebrew (Apple Silicon)
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -26,13 +29,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Python
 export PYTHONIOENCODING=utf-8
-# export PATH=~/Library/Python/3.6/bin:$PATH
-# export PATH=~/code/bat:$PATH
 
-# PATH
-# export PATH=$HOME/bin:$HOME/.dotfiles/bin:/usr/local/bin:/usr/local/sbin:$PATH
-
-# You may need to manually set your language environment
+# Locale
 export LC_ALL=en_US.UTF-8
 export LANG=da_DK.UTF-8
 export EDITOR='vim'
@@ -42,37 +40,12 @@ source $HOME/.dotfiles/zsh/aliases
 source $HOME/.dotfiles/zsh/functions
 
 # Java
-# export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
 export JAVA_21_HOME=$(/usr/libexec/java_home -v21)
-# alias java8='export JAVA_HOME=$JAVA_8_HOME'
-# alias java11='export JAVA_HOME=$JAVA_11_HOME'
 alias java21='export JAVA_HOME=$JAVA_21_HOME'
 
-# Default to java8
-# java8
-
-# NVM
-# export NVM_DIR="$HOME/.nvm"
-# . "/usr/local/opt/nvm/nvm.sh"
-
-# Secret stuff
+# Work / machine-specific env (AWS profile, SSO URLs, etc.) belongs in
+# ~/.private-dotfiles/shell-init — sourced below if present.
 [ -f $HOME/.private-dotfiles/shell-init ] && source $HOME/.private-dotfiles/shell-init
-
-# Brew
-export PATH="/usr/local/sbin:$PATH"
-
-# shp-games-infrastructure tools
-export PATH=$PATH:~/code/shp-games-infrastructure/bin/tools:~/code/shp-games-infrastructure/bin
-
-export PATH="/Users/andersemil/.local/bin:$PATH"
-
-# Shape Games CLI
-# eval "$(/Users/andersemil/code/shp-games-backend-cli/bin/sg init -)"
-
-# AWS
-export AWS_SHAPE_GAMES_USER=anders
-export AWS_DEFAULT_SSO_REGION=eu-west-1
-export AWS_DEFAULT_SSO_START_URL=https://shapegames.awsapps.com/start
 
 bindkey "^[[1;3D" backward-word
 bindkey "^[[1;3C" forward-word
@@ -81,9 +54,7 @@ eval "$(nodenv init -)"
 
 export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
 
-# bun completions
-[ -s "/Users/andersemil/.bun/_bun" ] && source "/Users/andersemil/.bun/_bun"
-
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"

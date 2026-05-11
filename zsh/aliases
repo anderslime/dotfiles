@@ -5,12 +5,12 @@ alias drop='cd ~/Dropbox'
 alias so='source ~/.zshrc'
 alias uuid="uuidgen | tr '[:upper:]' '[:lower:]'"
 alias cuuid="uuid | pbcopy"
-alias prettyjson='python -m json.tool'
+alias prettyjson='python3 -m json.tool'
 alias jsonvim='prettyjson | vim -c "set syntax=json" -'
 alias jsonless='prettyjson | less'
 alias cleardns="sudo killall -HUP mDNSResponder"
 alias jobdone="terminal-notifier -message \"Job's done\""
-alias csvtojson="python -c 'import csv, json, sys; print(json.dumps([dict(r) for r in csv.DictReader(sys.stdin)]))'"
+alias csvtojson="python3 -c 'import csv, json, sys; print(json.dumps([dict(r) for r in csv.DictReader(sys.stdin)]))'"
 
 # Vim
 alias v='vim'
@@ -25,31 +25,9 @@ alias tmk="tmux kill-session -t"
 alias tma="tmux attach -t"
 alias ms="mux start"
 
-# Ruby
-alias gemconsole="irb -rubygems -I lib -r ${PWD##*/}.rb"
-alias bake='bundle exec rake'
-alias be='bundle exec'
-alias bu='bundle update'
-alias bus='bundle update --source='
-alias remove_quotes="sed -r 's/\"//g'"
-
-# Rails
-alias devlog="tail -f log/development.log"
-alias rc="rails c"
-alias rdbm="rake db:migrate"
-
-# Ember
-alias es="ember serve"
-
-# PostgreSQL
-alias stoppostgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop'
-alias startpostgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
-
 # Docker
 alias dc='docker-compose'
 alias docklog="docker logs --follow"
-alias dconsole='docker_console'
-alias dockload='eval $(docker-machine env nf-cluster)'
 
 # Git
 alias gs="git status"
@@ -81,28 +59,6 @@ alias undeployed='git fetch --multiple production origin && git log production/m
 alias gpcb='git push origin HEAD'
 alias grom='git co master && git pull origin master && git checkout @{-1} && git rebase master'
 
-# Pow
-alias pr="powder -r"
-
-# Heroku
-alias gpp="git push production master && hp rake db:migrate"
-alias gps="git push staging master && hs rake db:migrate"
-alias hdp="git push origin master && gpp"
-alias hds="git push origin master && gps"
-alias hlogs='heroku logs -t'
-alias hs="h staging"
-alias hp="h production"
-alias hpc="hp run rails c"
-alias hsc="hs run rails c"
-alias hap="heroku accounts:set personal"
-alias has="heroku accounts:set shape"
-
-# Projects
-alias start_cargo="mux start cargoflux"
-alias start_oddset="mux start oddset"
-alias start_mitid="mux start mitid"
-# alias rm="trash"
-#
 # AWS
 alias asso='aws-sso-util'
 
@@ -111,5 +67,3 @@ alias jt="./gradlew test --parallel"
 alias jc="./gradlew clean"
 alias tpush='./gradlew test --parallel && gpcb'
 alias kotlinlib="gradle init --type kotlin-library && rm -rf .gradle gradle && rm gradlew* && rm settings.gradle.kts .gitignore"
-
-
