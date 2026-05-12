@@ -3,7 +3,7 @@ require 'rake'
 # Files/dirs that should NOT be symlinked as ~/.<name>.
 # `claude/` is handled specially below — we symlink individual entries
 # into ~/.claude/ instead of clobbering the whole live directory.
-SKIP = %w[Rakefile README.md README.rdoc LICENSE CLAUDE.md id_dsa.pub claude .git .gitignore .DS_Store].freeze
+SKIP = %w[Rakefile README.md README.rdoc LICENSE CLAUDE.md id_dsa.pub claude oh-my-zsh .git .gitignore .DS_Store].freeze
 
 # Paths inside the repo's claude/ dir that get linked into ~/.claude/.
 # Add new entries here as you decide to track more Claude config.

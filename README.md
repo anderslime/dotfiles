@@ -21,16 +21,19 @@ Personal macOS dotfiles (Apple Silicon). Shell, vim, git, tmux, and a `Brewfile`
    brew bundle --file=~/.dotfiles/Brewfile
    ```
    Sign in to the App Store first if `mas` entries fail, then re-run `brew bundle`.
-5. (Optional) Restore the private repo for secrets and work-specific env:
+5. Install oh-my-zsh (the repo doesn't vendor it; `zshrc` expects it at `~/.oh-my-zsh`):
    ```sh
-   git clone git@github.com:<you>/private-dotfiles.git ~/code/private-dotfiles
-   ln -s ~/code/private-dotfiles ~/.private-dotfiles
+   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
    ```
-   `zshrc` sources `~/.private-dotfiles/shell-init` automatically when present.
+   `--keep-zshrc` is critical — without it the installer overwrites the `~/.zshrc` symlink created in step 3.
 6. Vim plugins (Vundle):
    ```sh
    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
    vim +PluginInstall +qall
+   ```
+7. Install Claude Code via Anthropic's official installer (not Homebrew):
+   ```sh
+   curl -fsSL https://claude.ai/install.sh | bash
    ```
 
 ## Notes

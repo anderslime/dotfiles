@@ -60,6 +60,7 @@ brew "websocat"
 brew "wget"
 brew "yarn"
 brew "zsh"
+brew "ngrok"
 
 # Mac App Store
 mas "1Password", id: 1333542190

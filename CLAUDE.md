@@ -16,11 +16,11 @@ Consequence for edits: changing a file here changes the live config immediately.
 
 ## Key files
 
-- `zshrc` — entry point. Sources `zsh/aliases` and `zsh/functions`, plus `~/.private-dotfiles/shell-init` if present (private repo at `~/code/private-dotfiles`, symlinked as `~/.private-dotfiles`, for secrets and machine-specific env). Uses oh-my-zsh with theme `awesomepanda` and plugins `git docker aws`.
+- `zshrc` — entry point. Sources `zsh/aliases` and `zsh/functions`. Uses oh-my-zsh with theme `awesomepanda` and plugins `git docker aws`.
 - `zsh/aliases`, `zsh/functions` — heavy use of short git aliases (`g`, `gs`, `gp`, `gpcb`, `grom`, …). Prefer extending these over adding new shell scripts.
 - `zsh/func/` — autoloaded zsh functions (prompt themes, `awsso`, `zgitinit`).
 - `vimrc` + `vim/` — Vim config; plugins managed by **Vundle** (not vim-plug). After editing the plugin list, run `:PluginInstall` in vim. Vundle itself is not vendored — bootstrap with `git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim`.
-- `oh-my-zsh/` — full vendored copy of the oh-my-zsh repo, not a submodule. Don't edit files inside it; put customizations in `oh-my-zsh/custom/` or in `zsh/`.
+- oh-my-zsh — not tracked in this repo. Installed separately into `~/.oh-my-zsh` via upstream's installer (see README). Listed in `SKIP` in the Rakefile and in `.gitignore`. Put customizations in `zsh/` (which is tracked) rather than in `~/.oh-my-zsh/custom/` (which is not).
 - `gitconfig` — signs commits via SSH key (`gpg.format = ssh`, `commit.gpgsign = true`); `pull.ff = only`; rich `git l`/`git r`/`git hp` aliases backed by `githelpers`.
 - `Brewfile` — `brew bundle --file=Brewfile` to install.
 - `bin/` — small one-off scripts, exposed on `$PATH` via the `~/.bin` symlink.
@@ -39,5 +39,4 @@ There is no test suite, linter, or CI — this is config, not code.
 ## Conventions when editing
 
 - Adding shell aliases or functions: put them in `zsh/aliases` or `zsh/functions`. Don't create new top-level files unless they need to land in `$HOME` as a dotfile (the Rakefile will symlink every top-level entry).
-- Secrets, work-specific env vars, and per-machine config belong in `~/.private-dotfiles/shell-init`, not here. The public `zshrc` only sources it if present.
 - The `master` branch is the only branch; commit directly. Commits are SSH-signed automatically via `gitconfig`.

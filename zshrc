@@ -24,6 +24,11 @@ chpwd() {
   ls -lrthG
 }
 
+# Ngrok
+if command -v ngrok &>/dev/null; then
+  eval "$(ngrok completion)"
+fi
+
 # Load oh my zsh
 source $ZSH/oh-my-zsh.sh
 
@@ -43,14 +48,13 @@ source $HOME/.dotfiles/zsh/functions
 export JAVA_21_HOME=$(/usr/libexec/java_home -v21)
 alias java21='export JAVA_HOME=$JAVA_21_HOME'
 
-# Work / machine-specific env (AWS profile, SSO URLs, etc.) belongs in
-# ~/.private-dotfiles/shell-init — sourced below if present.
-[ -f $HOME/.private-dotfiles/shell-init ] && source $HOME/.private-dotfiles/shell-init
-
 bindkey "^[[1;3D" backward-word
 bindkey "^[[1;3C" forward-word
 
 eval "$(nodenv init -)"
+
+# User-local binaries (Claude Code lives here)
+export PATH="$HOME/.local/bin:$PATH"
 
 export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
 
