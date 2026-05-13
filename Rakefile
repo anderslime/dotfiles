@@ -41,11 +41,17 @@ task :install do
   end
 
   install_claude
+  configure_iterm
 end
 
 desc "symlink tracked claude/ entries into ~/.claude/"
 task :claude do
   install_claude
+end
+
+desc "force iTerm2 to Dark theme (ignoring system appearance)"
+task :iterm do
+  configure_iterm
 end
 
 def install_claude
@@ -79,6 +85,20 @@ def install_claude
     puts "linking ~/.claude/#{rel}"
     File.symlink(src, dest)
   end
+end
+
+# iTerm2 Preferences > Appearance > Theme. TabStyleWithAutomaticOption values:
+# 0=Light 1=Dark 2=Light High Contrast 3=Dark High Contrast 4=Automatic 5=Minimal 6=Compact
+ITERM_DARK = 1
+
+def configure_iterm
+  current = `defaults read com.googlecode.iterm2 TabStyleWithAutomaticOption 2>/dev/null`.strip
+  if current == ITERM_DARK.to_s
+    puts "iterm: theme already Dark"
+    return
+  end
+  puts "iterm: setting theme to Dark (was #{current.empty? ? 'unset' : current})"
+  system "defaults write com.googlecode.iterm2 TabStyleWithAutomaticOption -int #{ITERM_DARK}"
 end
 
 def replace_file(file)

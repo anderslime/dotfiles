@@ -24,13 +24,13 @@ chpwd() {
   ls -lrthG
 }
 
-# Ngrok
+# Load oh my zsh
+source $ZSH/oh-my-zsh.sh
+
+# Ngrok (must come after oh-my-zsh so compdef is defined)
 if command -v ngrok &>/dev/null; then
   eval "$(ngrok completion)"
 fi
-
-# Load oh my zsh
-source $ZSH/oh-my-zsh.sh
 
 # Python
 export PYTHONIOENCODING=utf-8
@@ -45,8 +45,8 @@ source $HOME/.dotfiles/zsh/aliases
 source $HOME/.dotfiles/zsh/functions
 
 # Java
-export JAVA_21_HOME=$(/usr/libexec/java_home -v21)
-alias java21='export JAVA_HOME=$JAVA_21_HOME'
+# export JAVA_21_HOME=$(/usr/libexec/java_home -v21)
+# alias java21='export JAVA_HOME=$JAVA_21_HOME'
 
 bindkey "^[[1;3D" backward-word
 bindkey "^[[1;3C" forward-word
